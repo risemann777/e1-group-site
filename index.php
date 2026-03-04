@@ -6,8 +6,8 @@ $APPLICATION->SetTitle("E1-Group");
 <div class="hero">
   <div class="hero__image">
     <picture>
-      <source media="(min-width:1280px)" srcset="" data-srcset="<?=SITE_TEMPLATE_PATH?>/assets/images/hero_w2000.jpg">
-      <img src="" data-src="<?=SITE_TEMPLATE_PATH?>/assets/images/hero_w2000.jpg" role="presentation" alt=""></picture>
+      <source media="(min-width:1280px)" srcset="<?=SITE_TEMPLATE_PATH?>/assets/images/hero_w2000.jpg">
+      <img src="<?=SITE_TEMPLATE_PATH?>/assets/images/hero_w2000.jpg" role="presentation" alt=""></picture>
   </div>
   <div class="hero__container">
     <div class="hero__content">
