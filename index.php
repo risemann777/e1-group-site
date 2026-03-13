@@ -20,7 +20,7 @@ $APPLICATION->SetTitle("E1-Group");
       </div>
       <div class="hero__controls">
         <button class="btn btn--secondary" type="button" data-toggle="modal" data-target="#contactModal">Предложить сотрудничество</button>
-        <button class="btn btn--outline-secondary" type="button" data-toggle="modal" data-target="#contactModal">О компании</button>
+        <a href="#advantage" data-smooth-scroll="true" class="btn btn--outline-secondary">О компании</a>
       </div>
     </div>
   </div>
@@ -37,9 +37,7 @@ $APPLICATION->SetTitle("E1-Group");
         </div>
       </div>
       <div class="advantage__controls">
-        <button class="btn btn--primary header__button" type="button" data-toggle="modal"
-                data-target="#contactModal">Оставить заявку
-        </button>
+        <button class="btn btn--primary header__button" type="button" data-toggle="modal" data-target="#contactModal">Оставить заявку</button>
       </div>
     </div>
     <div class="advantage__col">
