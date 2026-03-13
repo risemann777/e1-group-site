@@ -13,44 +13,32 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
           href="mailto:e1group-info@mail.com">e1group-info@mail.com</a></div>
     </div>
     <div class="footer__connect-form">
-      <form class="form form--static form--theme-light">
-        <div class="form__body">
-          <div class="form__field">
-            <div class="form__input"><label><span class="form__label">Выше имя</span><input
-                  class="form__control" type="text" name="name" placeholder="Имя / Огранизация"
-                  autocomplete="off"></label>
-              <div class="form__input-error"></div>
-            </div>
-          </div>
-          <div class="form__field">
-            <div class="form__input"><label><span class="form__label">Телефон</span><input
-                  class="form__control" type="tel" name="phone" placeholder="Телефон"
-                  autocomplete="off"></label>
-              <div class="form__input-error"></div>
-            </div>
-          </div>
-          <div class="form__field">
-            <div class="form__input">
-              <label>
-                <span class="form__label">E-mail</span>
-                <input class="form__control" type="text" name="email" placeholder="E-mail" autocomplete="off">
-              </label>
-            </div>
-          </div>
-        </div>
-        <div class="form__footer">
-          <button class="btn btn--secondary" type="button">Отправить</button>
-          <div class="form__policy">
-            <div class="checkbox checkbox--policy">
-              <label>
-                <input type="checkbox" name="policy">
-                <div class="checkbox__cr"></div>
-                <div class="checkbox__text">Нажимая на кнопку <a target="_blank" href="/policy/">вы соглашаетесь</a> на обработку персональных данных и <a target="_blank" href="policy.html">подтверждаете ознакомление</a> с политикой их обработки</div>
-              </label>
-            </div>
-          </div>
-        </div>
-      </form>
+      <?php $APPLICATION->IncludeComponent(
+          "ace.group:landing.feedback.form",
+          ".default",
+          array(
+              "EMAIL_TO" => "admin@e1group.ru",
+              "EVENT_MESSAGE_ID" => array(
+                  0 => "24",
+              ),
+              "FORM_NAME" => "Связаться с нами",
+              "OK_TEXT" => "Спасибо, ваше сообщение принято.",
+              "REQUIRED_FIELDS" => array(
+                  0 => "NAME",
+              ),
+              "USE_CAPTCHA" => "Y",
+              "USE_GOOGLE_RECAPTCHA" => "N",
+              "COMPONENT_TEMPLATE" => ".default",
+              "FORM_THEME" => "LIGHT",
+              "AJAX_MODE" => "Y",
+              "AJAX_OPTION_HISTORY" => "N",
+              "AJAX_OPTION_JUMP" => "N",
+              "AJAX_OPTION_SHADOW" => "Y",
+              "AJAX_OPTION_STYLE" => "Y",
+              "AJAX_OPTION_ADDITIONAL" => "FOOTER_FEEDBACK_FORM",
+          ),
+          false
+      );?>
     </div>
   </div>
   <div class="footer__bottom">
