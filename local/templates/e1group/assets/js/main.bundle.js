@@ -21,6 +21,16 @@ eval("\nvar isCallable = __webpack_require__(/*! ../internals/is-callable */ \".
 
 /***/ }),
 
+/***/ "./node_modules/core-js/internals/add-to-unscopables.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/core-js/internals/add-to-unscopables.js ***!
+  \**************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("\nvar wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ \"./node_modules/core-js/internals/well-known-symbol.js\");\nvar create = __webpack_require__(/*! ../internals/object-create */ \"./node_modules/core-js/internals/object-create.js\");\nvar defineProperty = (__webpack_require__(/*! ../internals/object-define-property */ \"./node_modules/core-js/internals/object-define-property.js\").f);\n\nvar UNSCOPABLES = wellKnownSymbol('unscopables');\nvar ArrayPrototype = Array.prototype;\n\n// Array.prototype[@@unscopables]\n// https://tc39.es/ecma262/#sec-array.prototype-@@unscopables\nif (ArrayPrototype[UNSCOPABLES] === undefined) {\n  defineProperty(ArrayPrototype, UNSCOPABLES, {\n    configurable: true,\n    value: create(null)\n  });\n}\n\n// add a key to Array.prototype[@@unscopables]\nmodule.exports = function (key) {\n  ArrayPrototype[UNSCOPABLES][key] = true;\n};\n\n\n//# sourceURL=webpack://Bundle/./node_modules/core-js/internals/add-to-unscopables.js?");
+
+/***/ }),
+
 /***/ "./node_modules/core-js/internals/an-object.js":
 /*!*****************************************************!*\
   !*** ./node_modules/core-js/internals/an-object.js ***!
@@ -68,6 +78,16 @@ eval("\nvar TO_STRING_TAG_SUPPORT = __webpack_require__(/*! ../internals/to-stri
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 eval("\nvar hasOwn = __webpack_require__(/*! ../internals/has-own-property */ \"./node_modules/core-js/internals/has-own-property.js\");\nvar ownKeys = __webpack_require__(/*! ../internals/own-keys */ \"./node_modules/core-js/internals/own-keys.js\");\nvar getOwnPropertyDescriptorModule = __webpack_require__(/*! ../internals/object-get-own-property-descriptor */ \"./node_modules/core-js/internals/object-get-own-property-descriptor.js\");\nvar definePropertyModule = __webpack_require__(/*! ../internals/object-define-property */ \"./node_modules/core-js/internals/object-define-property.js\");\n\nmodule.exports = function (target, source, exceptions) {\n  var keys = ownKeys(source);\n  var defineProperty = definePropertyModule.f;\n  var getOwnPropertyDescriptor = getOwnPropertyDescriptorModule.f;\n  for (var i = 0; i < keys.length; i++) {\n    var key = keys[i];\n    if (!hasOwn(target, key) && !(exceptions && hasOwn(exceptions, key))) {\n      defineProperty(target, key, getOwnPropertyDescriptor(source, key));\n    }\n  }\n};\n\n\n//# sourceURL=webpack://Bundle/./node_modules/core-js/internals/copy-constructor-properties.js?");
+
+/***/ }),
+
+/***/ "./node_modules/core-js/internals/correct-is-regexp-logic.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/core-js/internals/correct-is-regexp-logic.js ***!
+  \*******************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("\nvar wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ \"./node_modules/core-js/internals/well-known-symbol.js\");\n\nvar MATCH = wellKnownSymbol('match');\n\nmodule.exports = function (METHOD_NAME) {\n  var regexp = /./;\n  try {\n    '/./'[METHOD_NAME](regexp);\n  } catch (error1) {\n    try {\n      regexp[MATCH] = false;\n      return '/./'[METHOD_NAME](regexp);\n    } catch (error2) { /* empty */ }\n  } return false;\n};\n\n\n//# sourceURL=webpack://Bundle/./node_modules/core-js/internals/correct-is-regexp-logic.js?");
 
 /***/ }),
 
@@ -371,6 +391,16 @@ eval("\nmodule.exports = false;\n\n\n//# sourceURL=webpack://Bundle/./node_modul
 
 /***/ }),
 
+/***/ "./node_modules/core-js/internals/is-regexp.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/core-js/internals/is-regexp.js ***!
+  \*****************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("\nvar isObject = __webpack_require__(/*! ../internals/is-object */ \"./node_modules/core-js/internals/is-object.js\");\nvar classof = __webpack_require__(/*! ../internals/classof-raw */ \"./node_modules/core-js/internals/classof-raw.js\");\nvar wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ \"./node_modules/core-js/internals/well-known-symbol.js\");\n\nvar MATCH = wellKnownSymbol('match');\n\n// `IsRegExp` abstract operation\n// https://tc39.es/ecma262/#sec-isregexp\nmodule.exports = function (it) {\n  var isRegExp;\n  return isObject(it) && ((isRegExp = it[MATCH]) !== undefined ? !!isRegExp : classof(it) === 'RegExp');\n};\n\n\n//# sourceURL=webpack://Bundle/./node_modules/core-js/internals/is-regexp.js?");
+
+/***/ }),
+
 /***/ "./node_modules/core-js/internals/is-symbol.js":
 /*!*****************************************************!*\
   !*** ./node_modules/core-js/internals/is-symbol.js ***!
@@ -408,6 +438,16 @@ eval("\nvar uncurryThis = __webpack_require__(/*! ../internals/function-uncurry-
 /***/ ((module) => {
 
 eval("\nvar ceil = Math.ceil;\nvar floor = Math.floor;\n\n// `Math.trunc` method\n// https://tc39.es/ecma262/#sec-math.trunc\n// eslint-disable-next-line es/no-math-trunc -- safe\nmodule.exports = Math.trunc || function trunc(x) {\n  var n = +x;\n  return (n > 0 ? floor : ceil)(n);\n};\n\n\n//# sourceURL=webpack://Bundle/./node_modules/core-js/internals/math-trunc.js?");
+
+/***/ }),
+
+/***/ "./node_modules/core-js/internals/not-a-regexp.js":
+/*!********************************************************!*\
+  !*** ./node_modules/core-js/internals/not-a-regexp.js ***!
+  \********************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("\nvar isRegExp = __webpack_require__(/*! ../internals/is-regexp */ \"./node_modules/core-js/internals/is-regexp.js\");\n\nvar $TypeError = TypeError;\n\nmodule.exports = function (it) {\n  if (isRegExp(it)) {\n    throw new $TypeError(\"The method doesn't accept regular expressions\");\n  } return it;\n};\n\n\n//# sourceURL=webpack://Bundle/./node_modules/core-js/internals/not-a-regexp.js?");
 
 /***/ }),
 
@@ -781,6 +821,16 @@ eval("\nvar globalThis = __webpack_require__(/*! ../internals/global-this */ \".
 
 /***/ }),
 
+/***/ "./node_modules/core-js/modules/es.array.includes.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/core-js/modules/es.array.includes.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("\nvar $ = __webpack_require__(/*! ../internals/export */ \"./node_modules/core-js/internals/export.js\");\nvar $includes = (__webpack_require__(/*! ../internals/array-includes */ \"./node_modules/core-js/internals/array-includes.js\").includes);\nvar fails = __webpack_require__(/*! ../internals/fails */ \"./node_modules/core-js/internals/fails.js\");\nvar addToUnscopables = __webpack_require__(/*! ../internals/add-to-unscopables */ \"./node_modules/core-js/internals/add-to-unscopables.js\");\n\n// FF99+ bug\nvar BROKEN_ON_SPARSE = fails(function () {\n  // eslint-disable-next-line es/no-array-prototype-includes -- detection\n  return !Array(1).includes();\n});\n\n// `Array.prototype.includes` method\n// https://tc39.es/ecma262/#sec-array.prototype.includes\n$({ target: 'Array', proto: true, forced: BROKEN_ON_SPARSE }, {\n  includes: function includes(el /* , fromIndex = 0 */) {\n    return $includes(this, el, arguments.length > 1 ? arguments[1] : undefined);\n  }\n});\n\n// https://tc39.es/ecma262/#sec-array.prototype-@@unscopables\naddToUnscopables('includes');\n\n\n//# sourceURL=webpack://Bundle/./node_modules/core-js/modules/es.array.includes.js?");
+
+/***/ }),
+
 /***/ "./node_modules/core-js/modules/es.regexp.exec.js":
 /*!********************************************************!*\
   !*** ./node_modules/core-js/modules/es.regexp.exec.js ***!
@@ -788,6 +838,16 @@ eval("\nvar globalThis = __webpack_require__(/*! ../internals/global-this */ \".
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
 eval("\nvar $ = __webpack_require__(/*! ../internals/export */ \"./node_modules/core-js/internals/export.js\");\nvar exec = __webpack_require__(/*! ../internals/regexp-exec */ \"./node_modules/core-js/internals/regexp-exec.js\");\n\n// `RegExp.prototype.exec` method\n// https://tc39.es/ecma262/#sec-regexp.prototype.exec\n$({ target: 'RegExp', proto: true, forced: /./.exec !== exec }, {\n  exec: exec\n});\n\n\n//# sourceURL=webpack://Bundle/./node_modules/core-js/modules/es.regexp.exec.js?");
+
+/***/ }),
+
+/***/ "./node_modules/core-js/modules/es.string.includes.js":
+/*!************************************************************!*\
+  !*** ./node_modules/core-js/modules/es.string.includes.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("\nvar $ = __webpack_require__(/*! ../internals/export */ \"./node_modules/core-js/internals/export.js\");\nvar uncurryThis = __webpack_require__(/*! ../internals/function-uncurry-this */ \"./node_modules/core-js/internals/function-uncurry-this.js\");\nvar notARegExp = __webpack_require__(/*! ../internals/not-a-regexp */ \"./node_modules/core-js/internals/not-a-regexp.js\");\nvar requireObjectCoercible = __webpack_require__(/*! ../internals/require-object-coercible */ \"./node_modules/core-js/internals/require-object-coercible.js\");\nvar toString = __webpack_require__(/*! ../internals/to-string */ \"./node_modules/core-js/internals/to-string.js\");\nvar correctIsRegExpLogic = __webpack_require__(/*! ../internals/correct-is-regexp-logic */ \"./node_modules/core-js/internals/correct-is-regexp-logic.js\");\n\nvar stringIndexOf = uncurryThis(''.indexOf);\n\n// `String.prototype.includes` method\n// https://tc39.es/ecma262/#sec-string.prototype.includes\n$({ target: 'String', proto: true, forced: !correctIsRegExpLogic('includes') }, {\n  includes: function includes(searchString /* , position = 0 */) {\n    return !!~stringIndexOf(\n      toString(requireObjectCoercible(this)),\n      toString(notARegExp(searchString)),\n      arguments.length > 1 ? arguments[1] : undefined\n    );\n  }\n});\n\n\n//# sourceURL=webpack://Bundle/./node_modules/core-js/modules/es.string.includes.js?");
 
 /***/ }),
 
@@ -817,7 +877,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   inputMask: () => (/* reexport safe */ _modules_inputMask_js__WEBPACK_IMPORTED_MODULE_4__[\"default\"])\n/* harmony export */ });\n/* harmony import */ var _lib_mobile_detect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/mobile-detect */ \"./src/js/lib/mobile-detect.js\");\n/* harmony import */ var _modules_lazy_load_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/lazy-load.js */ \"./src/js/modules/lazy-load.js\");\n/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/modal */ \"./src/js/modules/modal.js\");\n/* harmony import */ var _lib_adjust_viewport_height_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./lib/adjust-viewport-height.js */ \"./src/js/lib/adjust-viewport-height.js\");\n/* harmony import */ var _modules_inputMask_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/inputMask.js */ \"./src/js/modules/inputMask.js\");\n/* harmony import */ var _modules_smoothScroll_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/smoothScroll.js */ \"./src/js/modules/smoothScroll.js\");\n\n\n\n\n\n\n\ndocument.addEventListener('DOMContentLoaded', () => {\n  const body = document.body;\n  body.classList.add('page--loaded');\n  if ((0,_lib_mobile_detect__WEBPACK_IMPORTED_MODULE_0__[\"default\"])()) {\n    body.classList.add('page--mobile');\n  } else {\n    body.classList.add('page--desktop');\n  }\n  (0,_modules_smoothScroll_js__WEBPACK_IMPORTED_MODULE_5__[\"default\"])();\n  (0,_modules_lazy_load_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n  // adjustViewportHeight()\n  new _modules_modal__WEBPACK_IMPORTED_MODULE_2__[\"default\"]();\n  (0,_modules_inputMask_js__WEBPACK_IMPORTED_MODULE_4__[\"default\"])();\n  window.addEventListener('orientationchange', _lib_adjust_viewport_height_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"]);\n});\n\n//# sourceURL=webpack://Bundle/./src/js/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   inputMask: () => (/* reexport safe */ _modules_inputMask_js__WEBPACK_IMPORTED_MODULE_4__[\"default\"])\n/* harmony export */ });\n/* harmony import */ var _lib_mobile_detect__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/mobile-detect */ \"./src/js/lib/mobile-detect.js\");\n/* harmony import */ var _modules_lazy_load_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/lazy-load.js */ \"./src/js/modules/lazy-load.js\");\n/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/modal */ \"./src/js/modules/modal.js\");\n/* harmony import */ var _lib_adjust_viewport_height_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./lib/adjust-viewport-height.js */ \"./src/js/lib/adjust-viewport-height.js\");\n/* harmony import */ var _modules_inputMask_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/inputMask.js */ \"./src/js/modules/inputMask.js\");\n/* harmony import */ var _modules_smoothScroll_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/smoothScroll.js */ \"./src/js/modules/smoothScroll.js\");\n/* harmony import */ var _modules_main_menu_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/main-menu.js */ \"./src/js/modules/main-menu.js\");\n\n\n\n\n\n\n\n\ndocument.addEventListener('DOMContentLoaded', () => {\n  const body = document.body;\n  body.classList.add('page--loaded');\n  if ((0,_lib_mobile_detect__WEBPACK_IMPORTED_MODULE_0__[\"default\"])()) {\n    body.classList.add('page--mobile');\n  } else {\n    body.classList.add('page--desktop');\n  }\n  (0,_modules_smoothScroll_js__WEBPACK_IMPORTED_MODULE_5__[\"default\"])();\n  (0,_modules_lazy_load_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n  // adjustViewportHeight()\n  new _modules_modal__WEBPACK_IMPORTED_MODULE_2__[\"default\"]();\n  (0,_modules_inputMask_js__WEBPACK_IMPORTED_MODULE_4__[\"default\"])();\n  (0,_modules_main_menu_js__WEBPACK_IMPORTED_MODULE_6__[\"default\"])();\n  window.addEventListener('orientationchange', _lib_adjust_viewport_height_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"]);\n});\n\n//# sourceURL=webpack://Bundle/./src/js/main.js?");
 
 /***/ }),
 
@@ -841,6 +901,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/js/modules/main-menu.js":
+/*!*************************************!*\
+  !*** ./src/js/modules/main-menu.js ***!
+  \*************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ mainMenu)\n/* harmony export */ });\nfunction mainMenu() {\n  const body = document.body;\n  const classNames = {\n    fullMenu: 'full-menu',\n    burger: 'burger',\n    bodyMenuOpened: 'full-menu-opened',\n    menuShow: 'full-menu--show',\n    mobileNav: 'mobile-nav',\n    mobileNavItem: 'mobile-nav__item',\n    mobileNavItemActive: 'mobile-nav__item--active',\n    mobileNavItemHead: 'mobile-nav__head',\n    mobileNavToggle: 'mobile-nav__toggle',\n    mobileNavSub: 'mobile-nav__sub',\n    mobileNavLink: 'mobile-nav__link'\n  };\n  const fullMenu = body.querySelector(\".\".concat(classNames.fullMenu));\n  const burger = body.querySelector(\".\".concat(classNames.burger));\n  if (!fullMenu) return console.warn(\"Element with class \\\"\".concat(classNames.fullMenu, \"\\\" does not exist\"));\n  if (!burger) return console.warn(\"Element with class \\\"\".concat(classNames.burger, \"\\\" does not exist\"));\n  burger.addEventListener('click', () => {\n    toggle();\n  });\n  const switchBodyOverflow = fixed => {\n    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;\n    if (fixed) {\n      if (scrollbarWidth) body.style.paddingRight = scrollbarWidth + 'px';\n      body.style.overflow = 'hidden';\n      body.classList.add(classNames.bodyMenuOpened);\n    } else {\n      if (body.style.paddingRight) {\n        body.style.removeProperty('padding-right');\n      }\n      body.style.removeProperty('overflow');\n      body.classList.remove(classNames.bodyMenuOpened);\n    }\n  };\n  const menuIsVisible = () => {\n    return fullMenu.classList.contains(classNames.menuShow);\n  };\n  const close = () => {\n    fullMenu.classList.remove(classNames.menuShow);\n    setTimeout(() => {\n      fullMenu.style.display = 'none';\n      switchBodyOverflow(false);\n    }, 300);\n  };\n  const open = () => {\n    fullMenu.style.display = 'block';\n    switchBodyOverflow(true);\n    setTimeout(() => {\n      fullMenu.classList.add(classNames.menuShow);\n    }, 150);\n  };\n  const toggle = () => {\n    if (menuIsVisible()) {\n      close();\n    } else {\n      open();\n    }\n  };\n  const mobileNavItems = fullMenu.querySelectorAll(\".\".concat(classNames.mobileNavItem));\n  if (mobileNavItems) {\n    mobileNavItems.forEach(item => {\n      const toggle = item.querySelector(\".\".concat(classNames.mobileNavToggle));\n      const sub = item.querySelector(\".\".concat(classNames.mobileNavSub));\n      const link = item.querySelector(\".\".concat(classNames.mobileNavLink));\n      if (toggle && sub) {\n        toggle.addEventListener('click', () => {\n          item.classList.toggle(\"\".concat(classNames.mobileNavItemActive));\n          if (item.classList.contains(classNames.mobileNavItemActive)) {\n            sub.style.display = \"block\";\n            const height = sub.offsetHeight;\n            sub.style.height = 0;\n            setTimeout(() => {\n              sub.style.height = \"\".concat(height, \"px\");\n            }, 5);\n          } else {\n            sub.style.height = 0;\n            setTimeout(() => {\n              sub.removeAttribute(\"style\");\n            }, 300);\n          }\n        });\n      }\n      if (link) {\n        link.addEventListener('click', () => {\n          if (link.hasAttribute('data-smooth-scroll')) {\n            // console.log('menu must be closed')\n            close();\n          }\n        });\n      }\n    });\n  }\n}\n\n//# sourceURL=webpack://Bundle/./src/js/modules/main-menu.js?");
+
+/***/ }),
+
 /***/ "./src/js/modules/modal.js":
 /*!*********************************!*\
   !*** ./src/js/modules/modal.js ***!
@@ -857,7 +927,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \****************************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ smoothScroll)\n/* harmony export */ });\nfunction smoothScroll() {\n  const smoothLinks = document.querySelectorAll('a[data-smooth-scroll]');\n  if (!smoothLinks) return false;\n  smoothLinks.forEach(link => {\n    const id = link.getAttribute('href');\n    const target = document.querySelector(id);\n    if (id && target) {\n      link.addEventListener('click', e => {\n        e.preventDefault();\n        target.scrollIntoView({\n          behavior: 'smooth'\n        });\n      });\n    }\n  });\n}\n\n//# sourceURL=webpack://Bundle/./src/js/modules/smoothScroll.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ smoothScroll)\n/* harmony export */ });\n/* harmony import */ var core_js_modules_es_array_includes_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.includes.js */ \"./node_modules/core-js/modules/es.array.includes.js\");\n/* harmony import */ var core_js_modules_es_string_includes_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.string.includes.js */ \"./node_modules/core-js/modules/es.string.includes.js\");\n\n\nfunction smoothScroll() {\n  const smoothLinks = document.querySelectorAll('a[data-smooth-scroll]');\n  if (!smoothLinks) return false;\n  smoothLinks.forEach(link => {\n    const strId = link.getAttribute('href');\n    const id = strId.includes('#') ? strId.substring(strId.indexOf('#')) : '';\n    const target = document.querySelector(id);\n    if (id && target) {\n      link.addEventListener('click', e => {\n        e.preventDefault();\n        target.scrollIntoView({\n          behavior: 'smooth'\n        });\n      });\n    }\n  });\n}\n\n//# sourceURL=webpack://Bundle/./src/js/modules/smoothScroll.js?");
 
 /***/ }),
 

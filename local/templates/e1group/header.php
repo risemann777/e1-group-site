@@ -30,28 +30,21 @@ $APPLICATION->ShowPanel();
 include("include_areas/svg_icons.php");
 ?>
 <div class="layout layout--pb-0">
+  <?php include("partial/header.full.menu.php");?>
   <header class="layout__header header header--sticky">
     <div class="header__container">
-      <div class="header__navbar"><a class="logo header__logo" href="/" aria-label="Переход на главную страницу">
+      <div class="header__navbar">
+        <a class="logo header__logo" href="/" aria-label="Переход на главную страницу">
           <svg class="svg-icon" viewBox="0 0 182 29" width="182" height="29">
             <use xlink:href="#svg-logo"></use>
           </svg>
         </a>
-        <nav class="nav header__nav">
-          <ul class="nav__list">
-            <li class="nav__item"><a class="nav__link" href="#advantage" data-smooth-scroll="true">О
-                компании</a></li>
-            <li class="nav__item"><a class="nav__link" href="#partnership" data-smooth-scroll="true">Сотрудничество</a>
-            </li>
-            <li class="nav__item"><a class="nav__link" href="#news" data-smooth-scroll="true">Медиа</a></li>
-            <li class="nav__item"><a class="nav__link" href="#contacts">Контакты</a></li>
-          </ul>
-        </nav>
+        <?php include("partial/header.nav.php");?>
       </div>
       <div class="header__controls"><!-- .header__phone: a(href="tel:+7 (499) 344-40-12") +7 (499) 344-40-12-->
         <button class="btn btn--primary header__button" type="button" data-toggle="modal" data-target="#contactModal">Свяжитесь с нами</button>
       </div>
-      <div class="hamburger hamburger--mobile header__hamburger" data-toggle="menu" data-target="mobile-menu"></div>
+      <div class="burger burger--mobile header__burger" data-toggle="menu" data-target="mobile-menu"><span></span></div>
     </div>
   </header>
   <div class="layout__main">
