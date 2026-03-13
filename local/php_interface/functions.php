@@ -26,3 +26,8 @@ function findSubstringsByArray($text, array $stringsArrayToFind): array {
 
   return $results;
 }
+
+function validatePhoneNumber($number): bool {
+  $pattern = '/^[^a-zA-Zа-яА-Я]*$/u';
+  return preg_match($pattern, $number);
+}
