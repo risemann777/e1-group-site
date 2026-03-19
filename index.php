@@ -106,90 +106,71 @@ $APPLICATION->SetTitle("E1-Group");
     </div>
   </div>
 </section>
-<section class="news news--index news--slider" id="news">
-  <div class="news__container">
-    <div class="news__heading">
-      <div class="news__title">Медиа компании</div>
-      <div class="news__controls">
-        <div class="news__nav news__nav-prev">
-          <svg class="svg-icon" viewBox="0 0 24 24" width="24" height="24">
-            <use xlink:href="#svg-icon-arrow-left"></use>
-          </svg>
-        </div>
-        <div class="news__nav news__nav-next">
-          <svg class="svg-icon" viewBox="0 0 24 24" width="24" height="24">
-            <use xlink:href="#svg-icon-arrow-right"></use>
-          </svg>
-        </div>
-      </div>
-    </div>
-    <div class="news__slider swiper" id="newsSlider">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="news-card news__item">
-            <div class="news-card__media">
-              <div class="news-card__image"><a class="news-card__clickable"
-                                               href="#newsDetail"></a>
-                <picture><img src="<?=SITE_TEMPLATE_PATH?>/assets/images/news/news-item-1.jpg"></picture>
-              </div>
-            </div>
-            <div class="news-card__info">
-              <div class="news-card__date">20.02.26</div>
-              <div class="news-card__title">«ЭНГЕЛЬС» вместо Bosch: в Саратовской области
-                возрождается производство отечественного профессионального электроинструмента
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="news-card news__item">
-            <div class="news-card__media">
-              <div class="news-card__image"><a class="news-card__clickable"
-                                               href="#newsDetail"></a>
-                <picture><img src="<?=SITE_TEMPLATE_PATH?>/assets/images/news/news-item-2.jpg"></picture>
-              </div>
-            </div>
-            <div class="news-card__info">
-              <div class="news-card__date">20.02.26</div>
-              <div class="news-card__title">«ЭНГЕЛЬС» вместо Bosch: в Саратовской области
-                возрождается производство отечественного профессионального электроинструмента
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="news-card news__item">
-            <div class="news-card__media">
-              <div class="news-card__image">
-                <picture><img src="<?=SITE_TEMPLATE_PATH?>/assets/images/news/news-item-3.jpg"></picture>
-              </div>
-            </div>
-            <div class="news-card__info">
-              <div class="news-card__date">20.02.26</div>
-              <div class="news-card__title">«ЭНГЕЛЬС» вместо Bosch: в Саратовской области
-                возрождается производство отечественного профессионального электроинструмента
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="news-card news__item">
-            <div class="news-card__media">
-              <div class="news-card__image">
-                <picture><img src="<?=SITE_TEMPLATE_PATH?>/assets/images/news/news-item-4.jpg"></picture>
-              </div>
-            </div>
-            <div class="news-card__info">
-              <div class="news-card__date">20.02.26</div>
-              <div class="news-card__title">«ЭНГЕЛЬС» вместо Bosch: в Саратовской области
-                возрождается производство отечественного профессионального электроинструмента
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
+<?php $APPLICATION->IncludeComponent(
+    "bitrix:news.list",
+    "index.news.slider",
+    array(
+        "ACTIVE_DATE_FORMAT" => "d.m.Y",
+        "ADD_SECTIONS_CHAIN" => "N",
+        "AJAX_MODE" => "N",
+        "AJAX_OPTION_ADDITIONAL" => "",
+        "AJAX_OPTION_HISTORY" => "N",
+        "AJAX_OPTION_JUMP" => "N",
+        "AJAX_OPTION_STYLE" => "N",
+        "CACHE_FILTER" => "N",
+        "CACHE_GROUPS" => "Y",
+        "CACHE_TIME" => "36000000",
+        "CACHE_TYPE" => "A",
+        "CHECK_DATES" => "Y",
+        "DETAIL_URL" => "",
+        "DISPLAY_BOTTOM_PAGER" => "N",
+        "DISPLAY_DATE" => "Y",
+        "DISPLAY_NAME" => "Y",
+        "DISPLAY_PICTURE" => "Y",
+        "DISPLAY_PREVIEW_TEXT" => "Y",
+        "DISPLAY_TOP_PAGER" => "N",
+        "FIELD_CODE" => array(
+            0 => "",
+            1 => "",
+        ),
+        "FILTER_NAME" => "",
+        "HIDE_LINK_WHEN_NO_DETAIL" => "Y",
+        "IBLOCK_ID" => "1",
+        "IBLOCK_TYPE" => "news",
+        "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+        "INCLUDE_SUBSECTIONS" => "N",
+        "MESSAGE_404" => "",
+        "NEWS_COUNT" => "10",
+        "PAGER_BASE_LINK_ENABLE" => "N",
+        "PAGER_DESC_NUMBERING" => "N",
+        "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+        "PAGER_SHOW_ALL" => "N",
+        "PAGER_SHOW_ALWAYS" => "N",
+        "PAGER_TEMPLATE" => ".default",
+        "PAGER_TITLE" => "Новости",
+        "PARENT_SECTION" => "",
+        "PARENT_SECTION_CODE" => "",
+        "PREVIEW_TRUNCATE_LEN" => "",
+        "PROPERTY_CODE" => array(
+            0 => "",
+            1 => "",
+        ),
+        "SET_BROWSER_TITLE" => "N",
+        "SET_LAST_MODIFIED" => "N",
+        "SET_META_DESCRIPTION" => "N",
+        "SET_META_KEYWORDS" => "N",
+        "SET_STATUS_404" => "N",
+        "SET_TITLE" => "N",
+        "SHOW_404" => "N",
+        "SORT_BY1" => "ACTIVE_FROM",
+        "SORT_BY2" => "SORT",
+        "SORT_ORDER1" => "DESC",
+        "SORT_ORDER2" => "ASC",
+        "STRICT_SECTION_CHECK" => "N",
+        "COMPONENT_TEMPLATE" => "index.slider"
+    ),
+    false
+);?>
 
 <?php require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
