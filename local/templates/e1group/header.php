@@ -48,3 +48,10 @@ include("include_areas/svg_icons.php");
     </div>
   </header>
   <div class="layout__main">
+    <?php $APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
+        "PATH" => "",
+        "SITE_ID" => "s1",
+        "START_FROM" => "0",
+    ),
+        false
+    );?>

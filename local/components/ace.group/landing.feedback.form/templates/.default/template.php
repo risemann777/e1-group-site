@@ -167,7 +167,7 @@ $submitButtonClassName = $arParams["FORM_THEME"] === 'light' ? "btn--secondary" 
         <label>
           <input type="checkbox" name="policy"<?php if($arResult["POLICY"] == "Y") echo " checked";?>>
           <span class="checkbox__cr"></span>
-          <span class="checkbox__text">Соглашаюсь с <a target="_blank" href="/policy/">политикой обработки персональных данных</a></span>
+          <span class="checkbox__text">Нажимая на кнопку <a target="_blank" href="/privacy/">вы соглашаетесь</a> на обработку персональных данных и <a target="_blank" href="/approve/">подтверждаете ознакомление</a> с политикой их обработки</span>
         </label>
       </div>
       <?php if ($arParams["USE_GOOGLE_RECAPTCHA"] == "Y") {

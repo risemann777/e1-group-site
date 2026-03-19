@@ -1,5 +1,7 @@
 <?php
+/** @var CMain $APPLICATION */
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetPageProperty("NOT_SHOW_NAV_CHAIN", "Y");
 $APPLICATION->SetTitle("E1-Group");
 ?>
 
