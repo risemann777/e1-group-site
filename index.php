@@ -136,28 +136,15 @@ $APPLICATION->SetTitle("E1-Group");
                   data-target="#contactModal">Предложить сотрудничество
           </button>
         </div>
-        <div class="partnership__slider swiper" id="partnershipSlider">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="partnership__item">
-                <img class="partnership__image" src="<?=SITE_TEMPLATE_PATH?>/assets/images/partners/partner_dfc.png">
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="partnership__item">
-                <img class="partnership__image" src="<?=SITE_TEMPLATE_PATH?>/assets/images/partners/partner_softline.png">
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="partnership__item">
-                <img class="partnership__image" src="<?=SITE_TEMPLATE_PATH?>/assets/images/partners/partner_noytech.png">
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="partnership__item">
-                <img class="partnership__image" src="<?=SITE_TEMPLATE_PATH?>/assets/images/partners/partner_engels.png"></div>
-            </div>
-          </div>
+        <div class="partnership__list">
+          <div class="partnership__item"><img class="partnership__image" src="<?=SITE_TEMPLATE_PATH?>/assets/images/partners/partner_dfc.png" alt=""></div>
+          <div class="partnership__item"><img class="partnership__image" src="<?=SITE_TEMPLATE_PATH?>/assets/images/partners/partner_softline.png" alt=""></div>
+          <div class="partnership__item"><img class="partnership__image" src="<?=SITE_TEMPLATE_PATH?>/assets/images/partners/partner_noytech.png" alt=""></div>
+          <div class="partnership__item"><img class="partnership__image" src="<?=SITE_TEMPLATE_PATH?>/assets/images/partners/partner_engels.png" alt=""></div>
+          <div class="partnership__item"><img class="partnership__image" src="<?=SITE_TEMPLATE_PATH?>/assets/images/partners/partner_dfc.png" alt=""></div>
+          <div class="partnership__item"><img class="partnership__image" src="<?=SITE_TEMPLATE_PATH?>/assets/images/partners/partner_softline.png" alt=""></div>
+          <div class="partnership__item"><img class="partnership__image" src="<?=SITE_TEMPLATE_PATH?>/assets/images/partners/partner_noytech.png" alt=""></div>
+          <div class="partnership__item"><img class="partnership__image" src="<?=SITE_TEMPLATE_PATH?>/assets/images/partners/partner_engels.png" alt=""></div>
         </div>
       </div>
     </div>
