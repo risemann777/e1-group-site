@@ -35,9 +35,7 @@ include("include_areas/svg_icons.php");
     <div class="header__container">
       <div class="header__navbar">
         <a class="logo header__logo" href="/" aria-label="Переход на главную страницу">
-          <svg class="svg-icon" viewBox="0 0 182 29" width="182" height="29">
-            <use xlink:href="#svg-logo"></use>
-          </svg>
+          <img src="<?=SITE_TEMPLATE_PATH?>/assets/images/logo_writing_black.svg">
         </a>
         <?php include("partial/header.nav.php");?>
       </div>

@@ -9,12 +9,21 @@
               <div class="mobile-nav mobile-menu__nav">
                 <div class="mobile-nav__item">
                   <div class="mobile-nav__head">
-                    <a class="mobile-nav__link" href="#advantage" data-smooth-scroll="true"><span>О компании</span></a>
+                    <a class="mobile-nav__link" href="#products" data-smooth-scroll="true"><span>Продукция и услуги</span></a>
                   </div>
                 </div>
                 <div class="mobile-nav__item">
                   <div class="mobile-nav__head">
                     <a class="mobile-nav__link" href="#partnership" data-smooth-scroll="true"><span>Партнеры</span></a>
+                  </div>
+                </div>
+                <div class="mobile-nav__item">
+                  <div class="mobile-nav__head">
+                    <a class="mobile-nav__link" href="#advantage" data-smooth-scroll="true"><span>О компании</span></a>
+                  </div>
+                </div>
+                <div class="mobile-nav__item">
+                  <div class="mobile-nav__head"><a class="mobile-nav__link" href="#career" data-smooth-scroll="true"><span>Карьера</span></a>
                   </div>
                 </div>
                 <div class="mobile-nav__item">

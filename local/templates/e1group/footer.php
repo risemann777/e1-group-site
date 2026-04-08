@@ -10,9 +10,9 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 <footer class="footer layout__footer">
   <div class="footer__connect">
     <div class="footer__connect-info">
-      <div class="footer__connect-cta">Узнайте о сотрудничестве или задайте вопрос, заполнив форму.</div>
+      <div class="footer__connect-cta">Стать партнером, задать вопрос, узнать о вакансиях</div>
       <div class="footer__connect-contact">
-        <span>Или напишите нам на почту</span>
+        <span>Обратитесь к нам на почту</span>
         <br>
         <a href="mailto:<?php include(Bitrix\Main\Application::getDocumentRoot() . $APPLICATION->GetTemplatePath("include_areas/inc.site_email.php"))?>">
           <?php $APPLICATION->IncludeComponent(
@@ -60,7 +60,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
   </div>
   <div class="footer__bottom">
     <div class="footer__bottom-info">
-      <div class="footer__bottom-copyright">Copyright © ООО «ДК РУ»</div>
+      <div class="footer__bottom-copyright">Copyright © АО «Е1 ГРУПП»</div>
       <div class="footer__bottom-address">
         <?php $APPLICATION->IncludeComponent(
             "bitrix:main.include",

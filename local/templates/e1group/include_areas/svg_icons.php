@@ -52,7 +52,7 @@
       <path d="M6 9L12 15L18 9" stroke-linecap="round" stroke-linejoin="round"></path>
     </g>
     <g id="svg-mobile-menu-arrow"><!-- viewBox="0 0 24 24" use stroke in CSS to set color-->
-      <path d="M4 9L12 15.5L20 9" stroke="white" stroke-linecap="round"></path>
+      <path d="M4 9L12 15.5L20 9" stroke-linecap="round"></path>
     </g>
     <g id="svg-elevator-type-arrow"><!-- viewBox="0 0 34 34" use stroke in CSS to set color-->
       <path d="M1 17H33M33 17L17 33M33 17L17 1" stroke="#E69864" stroke-linecap="round"
@@ -65,8 +65,8 @@
       <path d="M3.33325 10H16.6666M16.6666 10L9.99992 16.6667M16.6666 10L9.99992 3.33334" stroke="#E69864"
             stroke-linecap="round" stroke-linejoin="round"></path>
     </g>
-    <g id="svg-accordion-arrow"><!-- viewBox="0 0 36 36"-->
-      <path d="M6 13.5L18 23.25L30 13.5" stroke="#E69864" stroke-linecap="round"></path>
+    <g id="svg-accordion-arrow"><!-- viewBox="0 0 24 24"-->
+      <path d="M4 9L12 15.5L20 9" stroke="#2D5D87" stroke-linecap="round"></path>
     </g>
     <g id="svg-shaft-pit"><!-- viewBox="0 0 60 60"-->
       <path d="M51.5 47.5C51.5 48.5609 51.0783 49.578 50.3281 50.3281C49.578 51.0783 48.5609 51.5 47.5 51.5H12.5C11.4391 51.5 10.422 51.0783 9.67188 50.3281C8.92173 49.578 8.5 48.5609 8.5 47.5V12.5C8.5 11.4391 8.92173 10.422 9.67188 9.67188C10.422 8.92173 11.4391 8.5 12.5 8.5H47.5C48.5609 8.5 49.578 8.92173 50.3281 9.67188C51.0783 10.422 51.5 11.4391 51.5 12.5V47.5ZM53.5 12.5C53.5 10.9087 52.8674 9.38303 51.7422 8.25781C50.617 7.1326 49.0913 6.5 47.5 6.5H12.5C10.9087 6.5 9.38303 7.1326 8.25781 8.25781C7.13259 9.38303 6.5 10.9087 6.5 12.5V47.5C6.5 49.0913 7.13259 50.617 8.25781 51.7422C9.38303 52.8674 10.9087 53.5 12.5 53.5H47.5C49.0913 53.5 50.617 52.8674 51.7422 51.7422C52.8674 50.617 53.5 49.0913 53.5 47.5V12.5Z"
@@ -133,4 +133,4 @@
             fill="white"></path>
     </g><!-- svg(class="svg-icon" viewBox="0 0 32 32" width="32" height="32"): use(xlink:href="#svg-search")-->
   </defs>
-</svg><!-- include ../../components/loaders/loader-8-->
+</svg>
