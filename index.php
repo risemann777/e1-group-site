@@ -126,7 +126,7 @@ $APPLICATION->SetTitle("E1-Group");
         <div class="partnership__decor"><img src="<?=SITE_TEMPLATE_PATH?>/assets/images/partner_decor.svg"></div>
         <div class="partnership__info">
           <div class="partnership__title">Стратегическое партнерство с профессионалами в IT (SOFTLINE),
-            логистике (NOYTECH company) и производстве Электроинструмента (ENGELS)
+            логистике (NOYTECH Supply Chain Solutions) и производстве Электроинструмента (ENGELS)
           </div>
           <div class="partnership__description"><p>С целью предоставить качественные продукты и сервисные
               решения для профессионалов в России.</p></div>
