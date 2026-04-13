@@ -137,14 +137,14 @@ $APPLICATION->SetTitle("E1-Group");
           </button>
         </div>
         <div class="partnership__list">
-          <div class="partnership__item"><img class="partnership__image" src="<?=SITE_TEMPLATE_PATH?>/assets/images/partners/partner_dfc.png" alt=""></div>
-          <div class="partnership__item"><img class="partnership__image" src="<?=SITE_TEMPLATE_PATH?>/assets/images/partners/partner_softline.png" alt=""></div>
-          <div class="partnership__item"><img class="partnership__image" src="<?=SITE_TEMPLATE_PATH?>/assets/images/partners/partner_noytech.png" alt=""></div>
-          <div class="partnership__item"><img class="partnership__image" src="<?=SITE_TEMPLATE_PATH?>/assets/images/partners/partner_engels.png" alt=""></div>
-          <div class="partnership__item"><img class="partnership__image" src="<?=SITE_TEMPLATE_PATH?>/assets/images/partners/partner_dfc.png" alt=""></div>
-          <div class="partnership__item"><img class="partnership__image" src="<?=SITE_TEMPLATE_PATH?>/assets/images/partners/partner_softline.png" alt=""></div>
-          <div class="partnership__item"><img class="partnership__image" src="<?=SITE_TEMPLATE_PATH?>/assets/images/partners/partner_noytech.png" alt=""></div>
-          <div class="partnership__item"><img class="partnership__image" src="<?=SITE_TEMPLATE_PATH?>/assets/images/partners/partner_engels.png" alt=""></div>
+          <div class="partnership__item"><img class="partnership__image" src="/upload/main/images/partners/partner_dfc.png" alt=""></div>
+          <div class="partnership__item"><img class="partnership__image" src="/upload/main/images/partners/partner_softline.png" alt=""></div>
+          <div class="partnership__item"><img class="partnership__image" src="/upload/main/images/partners/partner_noytech.png" alt=""></div>
+          <div class="partnership__item"><img class="partnership__image" src="/upload/main/images/partners/partner_engels.png" alt=""></div>
+          <div class="partnership__item"><img class="partnership__image" src="/upload/main/images/partners/partner_dfc.png" alt=""></div>
+          <div class="partnership__item"><img class="partnership__image" src="/upload/main/images/partners/partner_softline.png" alt=""></div>
+          <div class="partnership__item"><img class="partnership__image" src="/upload/main/images/partners/partner_noytech.png" alt=""></div>
+          <div class="partnership__item"><img class="partnership__image" src="/upload/main/images/partners/partner_engels.png" alt=""></div>
         </div>
       </div>
     </div>
