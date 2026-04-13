@@ -212,7 +212,7 @@ $APPLICATION->SetTitle("E1-Group");
             HH</a></div>
       </div>
       <div class="career__col">
-        <div class="career__pic"><img src="<?=SITE_TEMPLATE_PATH?>/assets/images/career/career_block_pic.jpg"></div>
+        <div class="career__pic"><img src="/upload/main/images/business-team-working-min.jpg"></div>
       </div>
     </div>
   </section>
