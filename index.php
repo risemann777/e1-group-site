@@ -1,32 +1,35 @@
 <?php
 /** @var CMain $APPLICATION */
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetPageProperty("NOT_SHOW_NAV_CHAIN", "Y");
 $APPLICATION->SetTitle("E1-Group");
 ?>
 
-<div class="hero">
-  <div class="hero__image">
-    <picture>
-      <source media="(min-width:1280px)" srcset="<?=SITE_TEMPLATE_PATH?>/assets/images/hero_w2000.jpg">
-      <img src="<?=SITE_TEMPLATE_PATH?>/assets/images/hero_w2000.jpg" role="presentation" alt=""></picture>
-  </div>
-  <div class="hero__container">
-    <div class="hero__content">
-      <div class="hero__info">
-        <div class="hero__title">E1-Group</div>
-        <div class="hero__description">Группа компаний, специализирующихся на производстве и продаже
-          решений для строительства, включая электроинструмент и строительную технику, а также
-          IT-решения для управления парком малой строительной механизации.
+  <div class="hero">
+    <div class="hero__image">
+      <picture>
+        <source media="(min-width:1280px)" srcset="<?= SITE_TEMPLATE_PATH ?>/assets/images/hero_w2000.jpg">
+        <img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/hero_w2000.jpg" role="presentation" alt=""></picture>
+    </div>
+    <div class="hero__container">
+      <div class="hero__content">
+        <div class="hero__info">
+          <div class="logo"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/logo_writing_white.svg"
+                                 role="presentation" alt=""></div>
+          <div class="hero__description">Группа компаний, специализирующихся на производстве и продаже
+            решений для строительства, включая электроинструмент и строительную технику, а также
+            IT-решения для управления парком малой строительной механизации.
+          </div>
         </div>
-      </div>
-      <div class="hero__controls">
-        <button class="btn btn--secondary" type="button" data-toggle="modal" data-target="#contactModal">Предложить сотрудничество</button>
-        <a href="#advantage" data-smooth-scroll="true" class="btn btn--outline-secondary">О компании</a>
+        <div class="hero__controls">
+          <button class="btn btn--secondary" type="button" data-toggle="modal" data-target="#contactModal">Предложить
+            сотрудничество
+          </button>
+          <a href="#advantage" data-smooth-scroll="true" class="btn btn--outline-secondary">О компании</a>
+        </div>
       </div>
     </div>
   </div>
-</div>
   <section class="products" id="products">
     <div class="products__container">
       <div class="products__col">
@@ -38,9 +41,12 @@ $APPLICATION->SetTitle("E1-Group");
         <div class="solutions">
           <div class="solutions__title">Решения от Е1 Групп:</div>
           <div class="solutions__list">
-            <div class="solutions__item"><img src="<?=SITE_TEMPLATE_PATH?>/assets/images/solutions/solution_1.png"></div>
-            <div class="solutions__item"><img src="<?=SITE_TEMPLATE_PATH?>/assets/images/solutions/solution_2.png"></div>
-            <div class="solutions__item"><img src="<?=SITE_TEMPLATE_PATH?>/assets/images/solutions/solution_3.png"></div>
+            <div class="solutions__item"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/solutions/solution_1.png">
+            </div>
+            <div class="solutions__item"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/solutions/solution_2.png">
+            </div>
+            <div class="solutions__item"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/solutions/solution_3.png">
+            </div>
           </div>
         </div>
       </div>
@@ -59,13 +65,12 @@ $APPLICATION->SetTitle("E1-Group");
                 </div>
               </div>
               <div class="accordion__body">
-                <div class="accordion__content"><p>DongCheng – бренд профессиональных
-                    электроинструментов, ориентированный на качество. Продукция проходит строгий
-                    контроль от сырья до безопасности. Компания стремится стать лидером в инновациях
-                    и качестве. Миссия – непрерывное совершенствование, инновации и
+                <div class="accordion__content">
+                  <p>DongCheng – бренд профессиональных электроинструментов,
+                    ориентированный на качество. Продукция проходит строгий контроль от сырья до безопасности. Компания
+                    стремится стать лидером в инновациях и качестве. Миссия – непрерывное совершенствование, инновации и
                     функциональность.</p>
-                  <p>Сайт: <a target="_blank" href="https://www.dongchengtool.ru">www.dongchengtool.ru</a>
-                  </p>
+                  <p>Сайт: <a target="_blank" href="https://www.dongchengtool.ru">www.dongchengtool.ru</a></p>
                   <p>Почта: <a href="mailto:info@dongchengtool.ru">info@dongchengtool.ru</a></p>
                 </div>
               </div>
@@ -82,12 +87,11 @@ $APPLICATION->SetTitle("E1-Group");
                 </div>
               </div>
               <div class="accordion__body">
-                <div class="accordion__content"><p>Завод в Энгельсе производит инструменты для
-                    России и Европы, соблюдая высокие стандарты качества. Предприятие полностью
-                    контролирует производство — от разработки пресс-форм до сборки. Завод с высоким
-                    уровнем локализации и повышенным ресурсом на базе бывшего завода Бош в г.
-                    Энгельс. Оснащен современным технологическим центром и предлагает надежные,
-                    локализованные решения.</p>
+                <div class="accordion__content">
+                  <p>Завод в Энгельсе производит инструмент для российского рынка, соблюдая высокие стандарты качества.
+                    Предприятие полностью контролирует производственный процесс — от разработки пресс-форм до сборки.
+                    Производство организовано на базе бывшего завода Bosch (Бош) в г. Энгельс и ориентировано на выпуск
+                    надежных, локализованных решений.</p>
                   <p>Сайт: <a target="_blank" href="https://engelstool.ru/">engelstool.ru</a></p>
                   <p>Почта: <a href="mailto:info@engelstool.ru">info@engelstool.ru</a></p></div>
               </div>
@@ -104,13 +108,12 @@ $APPLICATION->SetTitle("E1-Group");
                 </div>
               </div>
               <div class="accordion__body">
-                <div class="accordion__content"><p>Поставщик строительного оборудования,
-                    электроинструментов, садово-парковой техники и сервисных услуг. <br>Является
-                    эксклюзивным дистрибьютером Международная экспертиза команды Distribution For
-                    Construction в области продукта, продаж, маркетинга, процессов, технической и
-                    сервисной поддержки продукта в совокупности с 15 летним успешным опытом на рынке
-                    делает возможным выведение нового профессионального электроинструмента в России,
-                    обеспечивая высокие стандарты качества, надежности и клиентского сервиса.</p>
+                <div class="accordion__content"><p>Поставщик строительного оборудования, электроинструментов,
+                    садово-парковой техники и сервисных услуг. Компания является эксклюзивным дистрибьютором бренда
+                    DongCheng в России и объединяет компетенции в области продукта, продаж, маркетинга, технической и
+                    сервисной поддержки. Глубокая международная экспертиза и профессиональный опыт команды позволяют
+                    выводить на российский рынок современный электроинструмент, обеспечивая высокие стандарты качества,
+                    надежности и клиентского сервиса.</p>
                   <p>Сайт: <a target="_blank" href="https://dctool.ru/">dctool.ru</a></p>
                   <p>Почта: <a href="mailto:dcru-info@mail.ru">dcru-info@mail.ru</a></p></div>
               </div>
@@ -123,7 +126,7 @@ $APPLICATION->SetTitle("E1-Group");
   <section class="partnership" id="partnership">
     <div class="partnership__container">
       <div class="partnership__content">
-        <div class="partnership__decor"><img src="<?=SITE_TEMPLATE_PATH?>/assets/images/partner_decor.svg"></div>
+        <div class="partnership__decor"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/partner_decor.svg"></div>
         <div class="partnership__info">
           <div class="partnership__title">Стратегическое партнерство с профессионалами в IT (SOFTLINE),
             логистике (NOYTECH Supply Chain Solutions) и производстве Электроинструмента (ENGELS)
@@ -137,14 +140,22 @@ $APPLICATION->SetTitle("E1-Group");
           </button>
         </div>
         <div class="partnership__list">
-          <div class="partnership__item"><img class="partnership__image" src="/upload/main/images/partners/partner_dfc.png" alt=""></div>
-          <div class="partnership__item"><img class="partnership__image" src="/upload/main/images/partners/partner_softline.png" alt=""></div>
-          <div class="partnership__item"><img class="partnership__image" src="/upload/main/images/partners/partner_noytech.png" alt=""></div>
-          <div class="partnership__item"><img class="partnership__image" src="/upload/main/images/partners/partner_engels.png" alt=""></div>
-          <div class="partnership__item"><img class="partnership__image" src="/upload/main/images/partners/partner_dfc.png" alt=""></div>
-          <div class="partnership__item"><img class="partnership__image" src="/upload/main/images/partners/partner_softline.png" alt=""></div>
-          <div class="partnership__item"><img class="partnership__image" src="/upload/main/images/partners/partner_noytech.png" alt=""></div>
-          <div class="partnership__item"><img class="partnership__image" src="/upload/main/images/partners/partner_engels.png" alt=""></div>
+          <div class="partnership__item"><img class="partnership__image"
+                                              src="/upload/main/images/partners/partner_dfc.png" alt=""></div>
+          <div class="partnership__item"><img class="partnership__image"
+                                              src="/upload/main/images/partners/partner_softline.png" alt=""></div>
+          <div class="partnership__item"><img class="partnership__image"
+                                              src="/upload/main/images/partners/partner_noytech.png" alt=""></div>
+          <div class="partnership__item"><img class="partnership__image"
+                                              src="/upload/main/images/partners/partner_engels.png" alt=""></div>
+          <div class="partnership__item"><img class="partnership__image"
+                                              src="/upload/main/images/partners/partner_dfc.png" alt=""></div>
+          <div class="partnership__item"><img class="partnership__image"
+                                              src="/upload/main/images/partners/partner_softline.png" alt=""></div>
+          <div class="partnership__item"><img class="partnership__image"
+                                              src="/upload/main/images/partners/partner_noytech.png" alt=""></div>
+          <div class="partnership__item"><img class="partnership__image"
+                                              src="/upload/main/images/partners/partner_engels.png" alt=""></div>
         </div>
       </div>
     </div>
@@ -154,7 +165,7 @@ $APPLICATION->SetTitle("E1-Group");
       <div class="advantage__col">
         <div class="advantage__info">
           <div class="advantage__label">Профессиональный электроинструмент от:</div>
-          <div class="advantage__logo"><img src="<?=SITE_TEMPLATE_PATH?>/assets/images/logo_writing_black.svg"></div>
+          <div class="advantage__logo"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/logo_writing_black.svg"></div>
           <div class="advantage__description">Динамично развивающаяся Группа Компаний, специализирующаяся
             на производстве и продажах решений для строительства, таких как электроинструмент,
             строительная техника, садовая техника и IT решений для управления парком средств малой
@@ -282,6 +293,6 @@ $APPLICATION->SetTitle("E1-Group");
         "COMPONENT_TEMPLATE" => "index.slider"
     ),
     false
-);?>
+); ?>
 
-<?php require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+<?php require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
