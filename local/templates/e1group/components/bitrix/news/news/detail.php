@@ -16,7 +16,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<div class="container">
+<div class="news-detail">
 <?php
 $ElementID = $APPLICATION->IncludeComponent(
 	"bitrix:news.detail",
@@ -73,5 +73,4 @@ $ElementID = $APPLICATION->IncludeComponent(
 	],
 	$component
 );?>
-<p><a href="<?=$arResult["FOLDER"].$arResult["URL_TEMPLATES"]["news"]?>"><?=GetMessage("T_NEWS_DETAIL_BACK")?></a></p>
 </div>

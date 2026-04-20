@@ -12,7 +12,8 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<div class="news-detail">
+<div class="news-detail__section">
+  <div class="news-detail__container">
 	<?if($arParams["DISPLAY_PICTURE"]!="N" && is_array($arResult["DETAIL_PICTURE"])):?>
 		<img
 			class="detail_picture"
@@ -92,4 +93,5 @@ $this->setFrameMode(true);
 		<?
 	}
 	?>
+</div>
 </div>
