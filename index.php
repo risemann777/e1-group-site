@@ -14,7 +14,7 @@ $APPLICATION->SetTitle("E1-Group");
     <div class="hero__container">
       <div class="hero__content">
         <div class="hero__info">
-          <div class="logo"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/logo_writing_white.svg"
+          <div class="hero__logo"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/logo_writing_white.svg"
                                  role="presentation" alt=""></div>
           <div class="hero__description">Группа компаний, специализирующихся на производстве и продаже
             решений для строительства, включая электроинструмент и строительную технику, а также
@@ -135,7 +135,7 @@ $APPLICATION->SetTitle("E1-Group");
               решения для профессионалов в России.</p></div>
         </div>
         <div class="partnership__controls">
-          <button class="btn btn--secondary header__button" type="button" data-toggle="modal"
+          <button class="btn btn--secondary" type="button" data-toggle="modal"
                   data-target="#contactModal">Предложить сотрудничество
           </button>
         </div>
@@ -174,7 +174,7 @@ $APPLICATION->SetTitle("E1-Group");
         </div>
         <div class="advantage__controls"><a class="btn btn--primary" href="#products" data-smooth-scroll>Продукция
             и услуги</a>
-          <button class="btn btn--outline-primary header__button" type="button" data-toggle="modal"
+          <button class="btn btn--outline-primary" type="button" data-toggle="modal"
                   data-target="#contactModal">Связаться с нами
           </button>
         </div>
