@@ -262,7 +262,7 @@ $APPLICATION->SetTitle("E1-Group");
             1 => "",
         ),
         "FILTER_NAME" => "",
-        "HIDE_LINK_WHEN_NO_DETAIL" => "Y",
+        "HIDE_LINK_WHEN_NO_DETAIL" => "N",
         "IBLOCK_ID" => "1",
         "IBLOCK_TYPE" => "news",
         "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
