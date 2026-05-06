@@ -16,7 +16,7 @@ $this->setFrameMode(true);
 <section class="news news--index news--slider" id="news">
   <div class="news__container">
     <div class="news__heading">
-      <div class="news__title">Медиа компании</div>
+      <div class="news__title">Медиа Группы компаний</div>
       <div class="news__controls">
         <div class="news__nav news__nav-prev">
           <svg class="svg-icon" viewBox="0 0 24 24" width="24" height="24">

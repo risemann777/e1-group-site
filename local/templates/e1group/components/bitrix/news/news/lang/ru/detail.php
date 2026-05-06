@@ -1,4 +1,4 @@
 <?
-$MESS ['T_NEWS_DETAIL_BACK'] = "Возврат к списку";
+$MESS ['T_NEWS_DETAIL_BACK'] = "Назад";
 $MESS ['CATEGORIES'] = "Материалы по теме:";
 ?>

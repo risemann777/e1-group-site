@@ -38,14 +38,17 @@ $APPLICATION->SetTitle("E1-Group");
           Электроинструментов более 15 лет. Мы оказываем полный спектр услуг по обслуживанию и
           предоставлению электроинструмента.
         </div>
-        <div class="solutions">
-          <div class="solutions__title">Решения от Е1 Групп:</div>
-          <div class="solutions__list">
-            <div class="solutions__item"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/solutions/solution_1.png">
-            </div>
-            <div class="solutions__item"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/solutions/solution_2.png">
-            </div>
-            <div class="solutions__item"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/solutions/solution_3.png">
+        <div class="products__stat">
+          <div class="stat">
+            <div class="stat__list">
+              <div class="stat__item">
+                <div class="stat__label"><span>Работаем с</span></div>
+                <div class="stat__value"><span>2010</span></div>
+              </div>
+              <div class="stat__item">
+                <div class="stat__label"><span>Число сотрудников</span></div>
+                <div class="stat__value"><span>1500+</span></div>
+              </div>
             </div>
           </div>
         </div>
@@ -164,45 +167,47 @@ $APPLICATION->SetTitle("E1-Group");
     <div class="advantage__container">
       <div class="advantage__col">
         <div class="advantage__info">
-          <div class="advantage__label">Профессиональный электроинструмент от:</div>
-          <div class="advantage__logo"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/logo_writing_black.svg"></div>
+          <div class="advantage__logo">
+            <img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/logo_writing_black.svg">
+          </div>
           <div class="advantage__description">Динамично развивающаяся Группа Компаний, специализирующаяся
             на производстве и продажах решений для строительства, таких как электроинструмент,
             строительная техника, садовая техника и IT решений для управления парком средств малой
             строительной механизации.
           </div>
         </div>
-        <div class="advantage__controls"><a class="btn btn--primary" href="#products" data-smooth-scroll>Продукция
-            и услуги</a>
-          <button class="btn btn--outline-primary" type="button" data-toggle="modal"
-                  data-target="#contactModal">Связаться с нами
-          </button>
+        <div class="advantage__controls">
+          <a class="btn btn--primary" href="#products" data-smooth-scroll>Продукция и услуги</a>
+          <button class="btn btn--outline-primary" type="button" data-toggle="modal" data-target="#contactModal">Связаться с нами</button>
         </div>
       </div>
       <div class="advantage__col">
-        <div class="advantage__list">
-          <div class="advantage__item">
-            <div class="advantage__item-name">IT Решения</div>
-            <div class="advantage__item-text">Решения для управления парком средств малой строительной
-              механизации
+        <div class="solution">
+          <div class="solution__title">Наши решения:</div>
+          <div class="solution__list">
+            <div class="solution__item">
+              <div class="solution__name">IT Решения</div>
+              <div class="solution__text">Решения для управления парком средств малой строительной
+                механизации
+              </div>
             </div>
-          </div>
-          <div class="advantage__item">
-            <div class="advantage__item-name">Дистрибуция</div>
-            <div class="advantage__item-text">Работа с крупнейшими игроками рынка электроинструментов и
-              крупными конечными потребителями
+            <div class="solution__item">
+              <div class="solution__name">Дистрибуция</div>
+              <div class="solution__text">Работа с крупнейшими игроками рынка электроинструментов и
+                крупными конечными потребителями
+              </div>
             </div>
-          </div>
-          <div class="advantage__item">
-            <div class="advantage__item-name">Операционная модель</div>
-            <div class="advantage__item-text">Эффективная логистика и партнерство с NOYTECH. Опытная
-              команда и производственная экспертиза
+            <div class="solution__item">
+              <div class="solution__name">Операционная модель</div>
+              <div class="solution__text">Эффективная логистика и партнерство с NOYTECH. Опытная
+                команда и производственная экспертиза
+              </div>
             </div>
-          </div>
-          <div class="advantage__item">
-            <div class="advantage__item-name">Пользователи</div>
-            <div class="advantage__item-text">Продуктовый портфель, покрывающий потребности широкого
-              круга пользователей от DIY энтузиастов до B2G
+            <div class="adv__item">
+              <div class="adv__name">Пользователи</div>
+              <div class="adv__text">Продуктовый портфель, покрывающий потребности широкого
+                круга пользователей от DIY энтузиастов до B2G
+              </div>
             </div>
           </div>
         </div>

@@ -73,4 +73,28 @@ $ElementID = $APPLICATION->IncludeComponent(
 	],
 	$component
 );?>
+  <div class="news-detail__bottom">
+    <div class="news-detail__container">
+      <div class="news-detail__social">
+        <div class="social">
+          <div class="social__title">Наши соц. сети:</div>
+          <div class="social__list">
+            <a class="social__item" href="https://vk.ru">
+              <img src="/upload/main/icons/social/social_vk.svg" alt="">
+            </a>
+            <a class="social__item" href="https://tg.com">
+              <img src="/upload/main/icons/social/social_tg.svg" alt="">
+            </a>
+            <a class="social__item" href="https://vk.ru">
+              <img src="/upload/main/icons/social/social_max.svg" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="news-detail__buttons">
+        <a class="btn btn--outline-primary" href="<?=$arResult["FOLDER"].$arResult["URL_TEMPLATES"]["news"]?>"><?=GetMessage("T_NEWS_DETAIL_BACK")?></a>
+      </div>
+    </div>
+  </div>
 </div>
+
