@@ -204,9 +204,9 @@ $APPLICATION->SetPageProperty("NOT_SHOW_HEADLINE", "Y");
                 команда и производственная экспертиза
               </div>
             </div>
-            <div class="adv__item">
-              <div class="adv__name">Пользователи</div>
-              <div class="adv__text">Продуктовый портфель, покрывающий потребности широкого
+            <div class="solution__item">
+              <div class="solution__name">Пользователи</div>
+              <div class="solution__text">Продуктовый портфель, покрывающий потребности широкого
                 круга пользователей от DIY энтузиастов до B2G
               </div>
             </div>
