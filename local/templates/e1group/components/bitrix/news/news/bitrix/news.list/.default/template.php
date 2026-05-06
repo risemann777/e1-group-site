@@ -12,6 +12,50 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
+
+<div class="news">
+  <div class="news__container">
+    <div class="news__list">
+      <?php foreach($arResult["ITEMS"] as $arItem) {
+        $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
+        $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+        ?>
+        <div class="news-card news__item">
+          <div class="news-card__media">
+            <div class="news-card__image">
+              <?php if($arParams["DISPLAY_PICTURE"]!="N" && is_array($arItem["PREVIEW_PICTURE"])) {
+                ?>
+                <picture>
+                  <img src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>"/>
+                </picture>
+                <?php
+              }?>
+              <?php if(!$arParams["HIDE_LINK_WHEN_NO_DETAIL"] || ($arItem["DETAIL_TEXT"] && $arResult["USER_HAVE_ACCESS"])) {
+                ?>
+                <a class="news-card__clickable" href="<?=$arItem["DETAIL_PAGE_URL"]?>" aria-label="Переход на страницу новости: <?=$arItem["NAME"]?>"></a>
+                <?php
+              }?>
+            </div>
+          </div>
+          <div class="news-card__info">
+            <?php if($arParams["DISPLAY_DATE"]!="N" && $arItem["DISPLAY_ACTIVE_FROM"]) {
+              ?>
+              <div class="news-card__date"><?=$arItem["DISPLAY_ACTIVE_FROM"]?></div>
+              <?php
+            }?>
+            <?php if($arParams["DISPLAY_NAME"]!="N" && $arItem["NAME"]) {
+              ?>
+              <div class="news-card__title"><?=$arItem["NAME"]?></div>
+              <?php
+            }?>
+          </div>
+        </div>
+        <?php
+      }?>
+    </div>
+  </div>
+</div>
+
 <div class="news-list">
 <?if($arParams["DISPLAY_TOP_PAGER"]):?>
 	<?=$arResult["NAV_STRING"]?><br />
