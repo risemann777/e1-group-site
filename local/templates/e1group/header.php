@@ -45,10 +45,18 @@ include("include_areas/svg_icons.php");
         </a>
         <?php include("partial/header.nav.php");?>
       </div>
-      <div class="header__controls"><!-- .header__phone: a(href="tel:+7 (499) 344-40-12") +7 (499) 344-40-12-->
-        <button class="btn btn--primary header__button" type="button" data-toggle="modal" data-target="#contactModal">Свяжитесь с нами</button>
+      <div class="header__controls">
+        <div class="header__search">
+          <button class="btn-search header__search-btn" type="button" data-toggle="search">
+            <svg class="svg-icon" viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#svg-icon-search"></use></svg>
+          </button>
+        </div>
+        <div class="lang-panel"><a class="lang-panel__item" href="#">EN</a></div>
+        <button class="btn btn--primary header__feedback-btn" type="button" data-toggle="modal" data-target="#contactModal">
+          <svg class="svg-icon" viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#svg-icon-edit"></use></svg>
+          <span>Свяжитесь с нами</span></button>
+        <div class="burger header__burger" data-toggle="menu" data-target="mobile-menu"><span></span></div>
       </div>
-      <div class="burger burger--mobile header__burger" data-toggle="menu" data-target="mobile-menu"><span></span></div>
     </div>
   </header>
   <div class="layout__main">
