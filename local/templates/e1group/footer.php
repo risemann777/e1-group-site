@@ -8,6 +8,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 ?>
 </div>
 <footer class="footer layout__footer">
+  <div class="footer__bg"><img src="<?=$APPLICATION->GetTemplatePath("assets/images/bg_footer.png")?>" alt=""></div>
   <div class="footer__connect">
     <div class="footer__connect-info">
       <div class="footer__connect-cta">Стать партнером, задать вопрос, узнать о вакансиях</div>

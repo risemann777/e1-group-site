@@ -215,6 +215,87 @@ $APPLICATION->SetPageProperty("NOT_SHOW_HEADLINE", "Y");
       </div>
     </div>
   </section>
+  <section class="mass-media" id="massMedia">
+    <div class="mass-media__head">
+      <div class="mass-media__title">СМИ о «Е1-Групп»</div>
+      <div class="mass-media__controls">
+        <div class="mass-media__nav mass-media__nav-prev">
+          <svg class="svg-icon" viewBox="0 0 24 24" width="24" height="24">
+            <use xlink:href="#svg-icon-arrow-left"></use>
+          </svg>
+        </div>
+        <div class="mass-media__nav mass-media__nav-next">
+          <svg class="svg-icon" viewBox="0 0 24 24" width="24" height="24">
+            <use xlink:href="#svg-icon-arrow-right"></use>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="mass-media__slider swiper" id="massMediaSlider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="mass-media-card">
+            <div class="mass-media-card__bg"><img src="<?=SITE_TEMPLATE_PATH?>/assets/images/bg_card_smi.png" alt=""></div>
+            <div class="mass-media-card__logo"><img src="/upload/main/images/logo_forbes.png" alt=""></div>
+            <div class="mass-media-card__info">
+              <div class="mass-media-card__quotes">
+                <svg class="svg-icon" viewBox="0 0 64 64" width="64" height="64">
+                  <use xlink:href="#svg-icon-quotes"></use>
+                </svg>
+              </div>
+              <div class="mass-media-card__text">Завод Bosch по производству электроинструментов в Энгельсе
+                (Саратовская область), который до апреля 2023 года принадлежал немецкой Bosch, вновь сменил
+                российского владельца. Им стала российская «Е1 Групп», учрежденная в конце 2025 года и связанная с
+                бывшими менеджерами российского подразделения Bosch
+              </div>
+              <div class="mass-media-card__bottom"><a class="mass-media-card__link" href="https://www.forbes.ru"
+                                                      target="_black">Читать статью</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="mass-media-card">
+            <div class="mass-media-card__bg"><img src="<?=SITE_TEMPLATE_PATH?>/assets/images/bg_card_smi.png"></div>
+            <div class="mass-media-card__logo"><img src="/upload/main/images/logo_forbes.png"></div>
+            <div class="mass-media-card__info">
+              <div class="mass-media-card__quotes">
+                <svg class="svg-icon" viewBox="0 0 64 64" width="64" height="64">
+                  <use xlink:href="#svg-icon-quotes"></use>
+                </svg>
+              </div>
+              <div class="mass-media-card__text">Завод Bosch по производству электроинструментов в Энгельсе
+                (Саратовская область), который до апреля 2023 года принадлежал немецкой Bosch, вновь сменил
+                российского владельца. Им стала российская «Е1 Групп», учрежденная в конце 2025 года и связанная с
+                бывшими менеджерами российского подразделения Bosch
+              </div>
+              <div class="mass-media-card__bottom"><a class="mass-media-card__link" href="https://www.forbes.ru"
+                                                      target="_black">Читать статью</a></div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="mass-media-card">
+            <div class="mass-media-card__bg"><img src="<?=SITE_TEMPLATE_PATH?>/assets/images/bg_card_smi.png"></div>
+            <div class="mass-media-card__logo"><img src="/upload/main/images/logo_forbes.png"></div>
+            <div class="mass-media-card__info">
+              <div class="mass-media-card__quotes">
+                <svg class="svg-icon" viewBox="0 0 64 64" width="64" height="64">
+                  <use xlink:href="#svg-icon-quotes"></use>
+                </svg>
+              </div>
+              <div class="mass-media-card__text">Завод Bosch по производству электроинструментов в Энгельсе
+                (Саратовская область), который до апреля 2023 года принадлежал немецкой Bosch, вновь сменил
+                российского владельца. Им стала российская «Е1 Групп», учрежденная в конце 2025 года и связанная с
+                бывшими менеджерами российского подразделения Bosch
+              </div>
+              <div class="mass-media-card__bottom"><a class="mass-media-card__link" href="https://www.forbes.ru"
+                                                      target="_black">Читать статью</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   <section class="career" id="career">
     <div class="career__container">
       <div class="career__col">
