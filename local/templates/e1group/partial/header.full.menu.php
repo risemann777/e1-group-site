@@ -10,6 +10,19 @@
                 <div class="mobile-nav__item">
                   <div class="mobile-nav__head">
                     <a class="mobile-nav__link" href="#products" data-smooth-scroll="true"><span>Продукция и услуги</span></a>
+                    <div class="mobile-nav__toggle">
+                      <svg class="svg-icon" viewBox="0 0 24 24" width="24" height="24">
+                        <use xlink:href="#svg-mobile-menu-arrow"></use>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="mobile-nav__sub">
+                    <ul>
+                      <li><a href="#"><span>Решения для строительства</span></a></li>
+                      <li><a href="#"><span>Решения по управлению парком инструментов</span></a></li>
+                      <li><a href="#"><span>Производство и разработка продукта</span></a></li>
+                      <li><a href="#"><span>Гарантийное обслуживание</span></a></li>
+                    </ul>
                   </div>
                 </div>
                 <div class="mobile-nav__item">
@@ -41,6 +54,16 @@
             <div class="mobile-menu__bottom">
               <button class="btn btn--primary full-menu__button" data-toggle="modal" data-target="#contactModal">Свяжитесь с нами</button>
             </div>
+          </div>
+        </div>
+        <div class="full-menu__desktop">
+          <div class="product-menu">
+            <ul class="product-menu__list">
+              <li class="product-menu__item"><a class="product-menu__link" href="#">Решения для строительства</a></li>
+              <li class="product-menu__item"><a class="product-menu__link" href="#">Решения по управлению парком инструментов</a></li>
+              <li class="product-menu__item"><a class="product-menu__link" href="#">Производство и разработка продукта</a></li>
+              <li class="product-menu__item"><a class="product-menu__link" href="#">Гарантийное обслуживание</a></li>
+            </ul>
           </div>
         </div>
       </div>
