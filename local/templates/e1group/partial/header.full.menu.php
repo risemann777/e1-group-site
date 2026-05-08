@@ -1,5 +1,5 @@
 <div class="full-menu full-menu--fall">
-  <div class="full-menu__bg"></div>
+  <div class="full-menu__bg" data-toggle="menu"></div>
   <div class="full-menu__panel">
     <div class="full-menu__wrapper">
       <div class="full-menu__container">
