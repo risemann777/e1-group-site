@@ -39,23 +39,33 @@ include("include_areas/svg_icons.php");
   <?php include("partial/header.full.menu.php");?>
   <header class="layout__header header header--sticky">
     <div class="header__container">
-      <div class="header__navbar">
+      <div class="header__left">
         <a class="logo header__logo" href="/" aria-label="Переход на главную страницу">
-          <img src="<?=SITE_TEMPLATE_PATH?>/assets/images/logo_writing_black.svg">
+          <img src="<?=$APPLICATION->GetTemplatePath("assets/images/logo_writing_black.svg")?>" alt="site logo">
         </a>
-        <?php include("partial/header.nav.php");?>
-      </div>
-      <div class="header__controls">
-        <div class="header__search">
-          <button class="btn-search header__search-btn" type="button" data-toggle="search">
-            <svg class="svg-icon" viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#svg-icon-search"></use></svg>
-          </button>
+        <div class="header__links">
+          <a class="header__products" href="#products">
+            <svg class="svg-icon" viewBox="0 0 24 24" width="24" height="24">
+              <use xlink:href="#svg-icon-menu-dots"></use>
+            </svg>
+            <span>Продукция и услуги</span>
+          </a>
+          <?php include("partial/header.nav.php");?>
         </div>
-        <div class="lang-panel"><a class="lang-panel__item" href="#">EN</a></div>
-        <button class="btn btn--primary header__feedback-btn" type="button" data-toggle="modal" data-target="#contactModal">
-          <svg class="svg-icon" viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#svg-icon-edit"></use></svg>
-          <span>Свяжитесь с нами</span></button>
-        <div class="burger header__burger" data-toggle="menu" data-target="mobile-menu"><span></span></div>
+      </div>
+      <div class="header__right">
+        <div class="header__controls">
+          <div class="header__search">
+            <button class="btn-search header__search-btn" type="button" data-toggle="search">
+              <svg class="svg-icon" viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#svg-icon-search"></use></svg>
+            </button>
+          </div>
+          <div class="lang-panel"><a class="lang-panel__item" href="#">EN</a></div>
+          <button class="btn btn--primary header__feedback-btn" type="button" data-toggle="modal" data-target="#contactModal">
+            <svg class="svg-icon" viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#svg-icon-edit"></use></svg>
+            <span>Свяжитесь с нами</span></button>
+          <div class="burger header__burger" data-toggle="menu" data-target="mobile-menu"><span></span></div>
+        </div>
       </div>
     </div>
   </header>

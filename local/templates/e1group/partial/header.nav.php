@@ -1,13 +1,5 @@
 <nav class="nav header__nav">
   <ul class="nav__list">
-    <li class="nav__item">
-      <div class="nav__btn" data-toggle="menu">
-        <svg class="svg-icon" viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#svg-icon-menu-dots"></use>
-        </svg>
-      </div>
-    </li>
-    <li class="nav__item"><a class="nav__link" href="#products" data-smooth-scroll="true">Продукция и услуги</a></li>
     <li class="nav__item"><a class="nav__link" href="#partnership" data-smooth-scroll="true">Партнеры</a></li>
     <li class="nav__item"><a class="nav__link" href="#advantage" data-smooth-scroll="true">О компании</a></li>
     <li class="nav__item"><a class="nav__link" href="#career" data-smooth-scroll="true">Карьера</a></li>
