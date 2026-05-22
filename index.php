@@ -144,22 +144,30 @@ $APPLICATION->SetPageProperty("NOT_SHOW_HEADLINE", "Y");
           </button>
         </div>
         <div class="partnership__list">
-          <div class="partnership__item"><img class="partnership__image"
-                                              src="/upload/main/images/partners/partner_dfc.png" alt=""></div>
-          <div class="partnership__item"><img class="partnership__image"
-                                              src="/upload/main/images/partners/partner_softline.png" alt=""></div>
-          <div class="partnership__item"><img class="partnership__image"
-                                              src="/upload/main/images/partners/partner_noytech.png" alt=""></div>
-          <div class="partnership__item"><img class="partnership__image"
-                                              src="/upload/main/images/partners/partner_engels.png" alt=""></div>
-          <div class="partnership__item"><img class="partnership__image"
-                                              src="/upload/main/images/partners/partner_dfc.png" alt=""></div>
-          <div class="partnership__item"><img class="partnership__image"
-                                              src="/upload/main/images/partners/partner_softline.png" alt=""></div>
-          <div class="partnership__item"><img class="partnership__image"
-                                              src="/upload/main/images/partners/partner_noytech.png" alt=""></div>
-          <div class="partnership__item"><img class="partnership__image"
-                                              src="/upload/main/images/partners/partner_engels.png" alt=""></div>
+          <div class="partnership__item">
+            <img class="partnership__image" src="/upload/main/images/partners/partner_dfc.svg" alt="">
+          </div>
+          <div class="partnership__item">
+            <img class="partnership__image" src="/upload/main/images/partners/partner_softline.svg" alt="">
+          </div>
+          <div class="partnership__item">
+            <img class="partnership__image" src="/upload/main/images/partners/partner_noytech.svg" alt="">
+          </div>
+          <div class="partnership__item">
+            <img class="partnership__image" src="/upload/main/images/partners/partner_engels.svg" alt="">
+          </div>
+          <div class="partnership__item">
+            <img class="partnership__image" src="/upload/main/images/partners/partner_dfc.svg" alt="">
+          </div>
+          <div class="partnership__item">
+            <img class="partnership__image" src="/upload/main/images/partners/partner_softline.svg" alt="">
+          </div>
+          <div class="partnership__item">
+            <img class="partnership__image" src="/upload/main/images/partners/partner_noytech.svg" alt="">
+          </div>
+          <div class="partnership__item">
+            <img class="partnership__image" src="/upload/main/images/partners/partner_engels.svg" alt="">
+          </div>
         </div>
       </div>
     </div>
