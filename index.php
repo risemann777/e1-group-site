@@ -223,87 +223,71 @@ $APPLICATION->SetPageProperty("NOT_SHOW_HEADLINE", "Y");
       </div>
     </div>
   </section>
-  <section class="mass-media" id="massMedia">
-    <div class="mass-media__head">
-      <div class="mass-media__title">СМИ о «Е1-Групп»</div>
-      <div class="mass-media__controls">
-        <div class="mass-media__nav mass-media__nav-prev">
-          <svg class="svg-icon" viewBox="0 0 24 24" width="24" height="24">
-            <use xlink:href="#svg-icon-arrow-left"></use>
-          </svg>
-        </div>
-        <div class="mass-media__nav mass-media__nav-next">
-          <svg class="svg-icon" viewBox="0 0 24 24" width="24" height="24">
-            <use xlink:href="#svg-icon-arrow-right"></use>
-          </svg>
-        </div>
-      </div>
-    </div>
-    <div class="mass-media__slider swiper" id="massMediaSlider">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="mass-media-card">
-            <div class="mass-media-card__bg"><img src="<?=SITE_TEMPLATE_PATH?>/assets/images/bg_card_smi.png" alt=""></div>
-            <div class="mass-media-card__logo"><img src="/upload/main/images/logo_forbes.png" alt=""></div>
-            <div class="mass-media-card__info">
-              <div class="mass-media-card__quotes">
-                <svg class="svg-icon" viewBox="0 0 64 64" width="64" height="64">
-                  <use xlink:href="#svg-icon-quotes"></use>
-                </svg>
-              </div>
-              <div class="mass-media-card__text">Завод Bosch по производству электроинструментов в Энгельсе
-                (Саратовская область), который до апреля 2023 года принадлежал немецкой Bosch, вновь сменил
-                российского владельца. Им стала российская «Е1 Групп», учрежденная в конце 2025 года и связанная с
-                бывшими менеджерами российского подразделения Bosch
-              </div>
-              <div class="mass-media-card__bottom"><a class="mass-media-card__link" href="https://www.forbes.ru"
-                                                      target="_black">Читать статью</a></div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="mass-media-card">
-            <div class="mass-media-card__bg"><img src="<?=SITE_TEMPLATE_PATH?>/assets/images/bg_card_smi.png"></div>
-            <div class="mass-media-card__logo"><img src="/upload/main/images/logo_forbes.png"></div>
-            <div class="mass-media-card__info">
-              <div class="mass-media-card__quotes">
-                <svg class="svg-icon" viewBox="0 0 64 64" width="64" height="64">
-                  <use xlink:href="#svg-icon-quotes"></use>
-                </svg>
-              </div>
-              <div class="mass-media-card__text">Завод Bosch по производству электроинструментов в Энгельсе
-                (Саратовская область), который до апреля 2023 года принадлежал немецкой Bosch, вновь сменил
-                российского владельца. Им стала российская «Е1 Групп», учрежденная в конце 2025 года и связанная с
-                бывшими менеджерами российского подразделения Bosch
-              </div>
-              <div class="mass-media-card__bottom"><a class="mass-media-card__link" href="https://www.forbes.ru"
-                                                      target="_black">Читать статью</a></div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="mass-media-card">
-            <div class="mass-media-card__bg"><img src="<?=SITE_TEMPLATE_PATH?>/assets/images/bg_card_smi.png"></div>
-            <div class="mass-media-card__logo"><img src="/upload/main/images/logo_forbes.png"></div>
-            <div class="mass-media-card__info">
-              <div class="mass-media-card__quotes">
-                <svg class="svg-icon" viewBox="0 0 64 64" width="64" height="64">
-                  <use xlink:href="#svg-icon-quotes"></use>
-                </svg>
-              </div>
-              <div class="mass-media-card__text">Завод Bosch по производству электроинструментов в Энгельсе
-                (Саратовская область), который до апреля 2023 года принадлежал немецкой Bosch, вновь сменил
-                российского владельца. Им стала российская «Е1 Групп», учрежденная в конце 2025 года и связанная с
-                бывшими менеджерами российского подразделения Bosch
-              </div>
-              <div class="mass-media-card__bottom"><a class="mass-media-card__link" href="https://www.forbes.ru"
-                                                      target="_black">Читать статью</a></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<?$APPLICATION->IncludeComponent(
+    "bitrix:news.list",
+    "index.smi.slider",
+    [
+        "ACTIVE_DATE_FORMAT" => "d.m.Y",
+        "ADD_SECTIONS_CHAIN" => "Y",
+        "AJAX_MODE" => "N",
+        "AJAX_OPTION_ADDITIONAL" => "",
+        "AJAX_OPTION_HISTORY" => "N",
+        "AJAX_OPTION_JUMP" => "N",
+        "AJAX_OPTION_STYLE" => "Y",
+        "CACHE_FILTER" => "N",
+        "CACHE_GROUPS" => "Y",
+        "CACHE_TIME" => "36000000",
+        "CACHE_TYPE" => "A",
+        "CHECK_DATES" => "Y",
+        "DETAIL_URL" => "",
+        "DISPLAY_BOTTOM_PAGER" => "Y",
+        "DISPLAY_DATE" => "Y",
+        "DISPLAY_NAME" => "Y",
+        "DISPLAY_PICTURE" => "Y",
+        "DISPLAY_PREVIEW_TEXT" => "Y",
+        "DISPLAY_TOP_PAGER" => "N",
+        "FIELD_CODE" => [
+            0 => "",
+            1 => "",
+        ],
+        "FILTER_NAME" => "",
+        "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+        "IBLOCK_ID" => "5",
+        "IBLOCK_TYPE" => "news",
+        "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+        "INCLUDE_SUBSECTIONS" => "Y",
+        "MESSAGE_404" => "",
+        "NEWS_COUNT" => "20",
+        "PAGER_BASE_LINK_ENABLE" => "N",
+        "PAGER_DESC_NUMBERING" => "N",
+        "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+        "PAGER_SHOW_ALL" => "N",
+        "PAGER_SHOW_ALWAYS" => "N",
+        "PAGER_TEMPLATE" => ".default",
+        "PAGER_TITLE" => "Новости",
+        "PARENT_SECTION" => "",
+        "PARENT_SECTION_CODE" => "",
+        "PREVIEW_TRUNCATE_LEN" => "",
+        "PROPERTY_CODE" => [
+            0 => "ARTICLE_LINK",
+            1 => "LOGO",
+        ],
+        "SET_BROWSER_TITLE" => "Y",
+        "SET_LAST_MODIFIED" => "N",
+        "SET_META_DESCRIPTION" => "Y",
+        "SET_META_KEYWORDS" => "Y",
+        "SET_STATUS_404" => "N",
+        "SET_TITLE" => "Y",
+        "SHOW_404" => "N",
+        "SORT_BY1" => "SORT",
+        "SORT_BY2" => "ACTIVE_FROM",
+        "SORT_ORDER1" => "ASC",
+        "SORT_ORDER2" => "DESC",
+        "STRICT_SECTION_CHECK" => "N",
+        "COMPONENT_TEMPLATE" => "index.smi.slider"
+    ],
+    false
+);?>
   <section class="career" id="career">
     <div class="career__container">
       <div class="career__col">
