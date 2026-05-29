@@ -31,9 +31,17 @@ $this->setFrameMode(true);
       </div>
     <?endif?>
     <div class="news-detail__content">
-      <?if($arParams["DISPLAY_NAME"]!="N" && $arResult["NAME"]):?>
-        <h1><?=$arResult["NAME"]?></h1>
-      <?endif;?>
+      <?php if($arResult["IPROPERTY_VALUES"]["ELEMENT_PAGE_TITLE"]) {
+        ?>
+          <h1><?=$arResult["IPROPERTY_VALUES"]["ELEMENT_PAGE_TITLE"]?></h1>
+        <?php
+      } else {
+        if($arParams["DISPLAY_NAME"]!="N" && $arResult["NAME"]) {
+          ?>
+          <h1><?=$arResult["NAME"]?></h1>
+          <?php
+        }
+      }?>
       <?if($arParams["DISPLAY_PREVIEW_TEXT"]!="N" && ($arResult["FIELDS"]["PREVIEW_TEXT"] ?? '')):?>
         <p><?=$arResult["FIELDS"]["PREVIEW_TEXT"];unset($arResult["FIELDS"]["PREVIEW_TEXT"]);?></p>
       <?endif;?>
