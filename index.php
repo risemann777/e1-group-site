@@ -43,12 +43,16 @@ $APPLICATION->SetPageProperty("NOT_SHOW_HEADLINE", "Y");
           <div class="stat">
             <div class="stat__list">
               <div class="stat__item">
-                <div class="stat__label"><span>Работаем с</span></div>
-                <div class="stat__value"><span>2010</span></div>
+                <div class="stat__label">Экспертиза команды<br>на рынке электроинструмента</div>
+                <div class="stat__info">
+                  <div class="stat__value">>30</div><div class="stat__term">лет</div>
+                </div>
               </div>
               <div class="stat__item">
-                <div class="stat__label"><span>Число сотрудников</span></div>
-                <div class="stat__value"><span>1500+</span></div>
+                <div class="stat__label">Ед. продукции<br>выпускаем в год</div>
+                <div class="stat__info">
+                  <div class="stat__value">>2</div><div class="stat__term">млн.</div>
+                </div>
               </div>
             </div>
           </div>
@@ -272,12 +276,12 @@ $APPLICATION->SetPageProperty("NOT_SHOW_HEADLINE", "Y");
             0 => "ARTICLE_LINK",
             1 => "LOGO",
         ],
-        "SET_BROWSER_TITLE" => "Y",
+        "SET_BROWSER_TITLE" => "N",
         "SET_LAST_MODIFIED" => "N",
-        "SET_META_DESCRIPTION" => "Y",
-        "SET_META_KEYWORDS" => "Y",
+        "SET_META_DESCRIPTION" => "N",
+        "SET_META_KEYWORDS" => "N",
         "SET_STATUS_404" => "N",
-        "SET_TITLE" => "Y",
+        "SET_TITLE" => "N",
         "SHOW_404" => "N",
         "SORT_BY1" => "SORT",
         "SORT_BY2" => "ACTIVE_FROM",
