@@ -183,7 +183,7 @@ $APPLICATION->SetPageProperty("NOT_SHOW_HEADLINE", "Y");
           <div class="advantage__logo">
             <img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/logo_writing_black.svg">
           </div>
-          <div class="advantage__description">Динамично развивающаяся Группа Компаний, специализирующаяся
+          <div class="advantage__description">АО «Е1 Групп» &mdash; динамично развивающаяся Группа Компаний, специализирующаяся
             на производстве и продажах решений для строительства, таких как электроинструмент,
             строительная техника, садовая техника и IT решений для управления парком средств малой
             строительной механизации.
