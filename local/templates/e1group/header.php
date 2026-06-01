@@ -44,12 +44,14 @@ include("include_areas/svg_icons.php");
           <img src="<?=$APPLICATION->GetTemplatePath("assets/images/logo_writing_black.svg")?>" alt="site logo">
         </a>
         <div class="header__links">
-          <a class="header__products" href="#products">
-            <svg class="svg-icon" viewBox="0 0 24 24" width="24" height="24">
-              <use xlink:href="#svg-icon-menu-dots"></use>
-            </svg>
-            <span>Продукция и услуги</span>
-          </a>
+          <div class="header__products">
+            <span data-toggle="productsMenu">
+              <svg class="svg-icon" viewBox="0 0 24 24" width="24" height="24">
+                <use xlink:href="#svg-icon-menu-dots"></use>
+              </svg>
+            </span>
+            <a href="#products">Продукция и услуги</a>
+          </div>
           <?php include("partial/header.nav.php");?>
         </div>
       </div>
