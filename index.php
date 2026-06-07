@@ -31,6 +31,41 @@ $APPLICATION->SetPageProperty("NOT_SHOW_HEADLINE", "Y");
       </div>
     </div>
   </div>
+  <section class="statistic" id="stat">
+    <div class="statistic__container">
+      <div class="stat">
+        <div class="stat__list">
+          <div class="stat__item">
+            <div class="stat__label">Экспертиза команды на рынке электроинструмента</div>
+            <div class="stat__info">
+              <div class="stat__value">>30</div>
+              <div class="stat__term">лет</div>
+            </div>
+          </div>
+          <div class="stat__item">
+            <div class="stat__label">Производственная мощность завода ЭНГЕЛЬС</div>
+            <div class="stat__info">
+              <div class="stat__value">>1.5</div>
+              <div class="stat__term">млн. шт.</div>
+            </div>
+          </div>
+          <div class="stat__item">
+            <div class="stat__label">Продажи электроинструмента DongCheng по всему миру</div>
+            <div class="stat__info">
+              <div class="stat__value">>30</div>
+              <div class="stat__term">млн. шт.</div>
+            </div>
+          </div>
+          <div class="stat__item">
+            <div class="stat__label">Брендов для профессионалов в портфолио</div>
+            <div class="stat__info">
+              <div class="stat__value">>5</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   <section class="products" id="products">
     <div class="products__container">
       <div class="products__col">
@@ -38,24 +73,6 @@ $APPLICATION->SetPageProperty("NOT_SHOW_HEADLINE", "Y");
         <div class="products__description">Команда профессионалов с опытом работы на рынке
           Электроинструментов более 15 лет. Мы оказываем полный спектр услуг по обслуживанию и
           предоставлению электроинструмента.
-        </div>
-        <div class="products__stat">
-          <div class="stat">
-            <div class="stat__list">
-              <div class="stat__item">
-                <div class="stat__label">Экспертиза команды<br>на рынке электроинструмента</div>
-                <div class="stat__info">
-                  <div class="stat__value">>30</div><div class="stat__term">лет</div>
-                </div>
-              </div>
-              <div class="stat__item">
-                <div class="stat__label">Ед. продукции<br>выпускаем в год</div>
-                <div class="stat__info">
-                  <div class="stat__value">>2</div><div class="stat__term">млн.</div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
       <div class="products__col">
