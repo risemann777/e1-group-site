@@ -7,16 +7,16 @@ $APPLICATION->SetPageProperty("NOT_SHOW_HEADLINE", "Y");
 ?>
 
   <div class="hero">
-    <div class="hero__image">
-      <picture>
-        <source media="(min-width:1280px)" srcset="<?= SITE_TEMPLATE_PATH ?>/assets/images/hero_w2000.jpg">
-        <img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/hero_w2000.jpg" role="presentation" alt=""></picture>
+    <div class="hero__video">
+      <video autoplay loop muted>
+        <source src="/upload/main/media/hero_desktop.mp4" type="video/mp4">
+      </video>
     </div>
     <div class="hero__container">
       <div class="hero__content">
         <div class="hero__info">
-          <div class="hero__logo"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/logo_writing_white.svg"
-                                 role="presentation" alt=""></div>
+          <div class="hero__logo">
+            <img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/logo_writing_white.svg" role="presentation" alt=""></div>
           <div class="hero__description">Группа компаний, специализирующихся на производстве и продаже
             решений для строительства, включая электроинструмент и строительную технику, а также
             IT-решения для управления парком малой строительной механизации.
