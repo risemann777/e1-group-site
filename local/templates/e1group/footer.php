@@ -64,10 +64,9 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
       );?>
     </div>
   </div>
-  <div class="footer__bottom">
-    <div class="footer__bottom-info">
-      <div class="footer__bottom-copyright">Copyright © АО «Е1 ГРУПП»</div>
-      <div class="footer__bottom-address">
+  <div class="footer__middle">
+    <div class="footer__middle-left">
+      <div class="footer-address">
         <?php $APPLICATION->IncludeComponent(
             "bitrix:main.include",
             "",
@@ -80,8 +79,39 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
             )
         );?>
       </div>
+      <div class="footer-details">
+        <div class="footer-details__item">
+          <div class="footer-details__label">ИНН:</div>
+          <div class="footer-details__value">9706060150</div>
+        </div>
+        <div class="footer-details__item">
+          <div class="footer-details__label">ОГРН:</div>
+          <div class="footer-details__value">1257700575274</div>
+        </div>
+        <div class="footer-details__item">
+          <div class="footer-details__label">КПП:</div>
+          <div class="footer-details__value">770601001</div>
+        </div>
+      </div>
     </div>
-    <div class="footer__bottom-links">
+    <div class="footer__middle-right">
+      <div class="footer-contact">
+        <div class="footer-contact__item">
+          <div class="footer-contact__label">Телефон:</div>
+          <div class="footer-contact__value"><a href="tel:79000000000">+7 (900) 000-00-00</a></div>
+        </div>
+        <div class="footer-contact__item">
+          <div class="footer-contact__label">Почта:</div>
+          <div class="footer-contact__value"><a href="mailto:info@e1-group.ru">info@e1-group.ru</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div class="footer__bottom-info">
+      <div class="footer__copyright">Copyright © АО «Е1 ГРУПП»</div>
+    </div>
+    <div class="footer__links">
       <a href="/privacy/">Политика конфиденциальности</a>
       <a href="/approve/">Согласие на обработку персональных данных</a>
     </div>
