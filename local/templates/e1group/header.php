@@ -62,7 +62,7 @@ include("include_areas/svg_icons.php");
               <svg class="svg-icon" viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#svg-icon-search"></use></svg>
             </button>
           </div>
-          <div class="lang-panel"><a class="lang-panel__item" href="#">EN</a></div>
+          <?php /*?><div class="lang-panel"><a class="lang-panel__item" href="#">EN</a></div><?*/?>
           <button class="btn btn--primary header__feedback-btn" type="button" data-toggle="modal" data-target="#contactModal">
             <svg class="svg-icon" viewBox="0 0 24 24" width="24" height="24"><use xlink:href="#svg-icon-edit"></use></svg>
             <span>Свяжитесь с нами</span></button>
