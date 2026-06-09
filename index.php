@@ -153,15 +153,13 @@ $APPLICATION->SetPageProperty("NOT_SHOW_HEADLINE", "Y");
       <div class="partnership__content">
         <div class="partnership__decor"><img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/partner_decor.svg"></div>
         <div class="partnership__info">
-          <div class="partnership__title">Стратегическое партнерство с профессионалами в IT (SOFTLINE),
-            логистике (NOYTECH Supply Chain Solutions) и производстве Электроинструмента (ENGELS)
+          <div class="partnership__title">Стратегическое партнерство с профессионалами в IT (СОФТЛАЙН),
+            логистике (NOYTECH Supply Chain Solutions) и производстве Электроинструмента (ЭНГЕЛЬС)
           </div>
-          <div class="partnership__description"><p>С целью предоставить качественные продукты и сервисные
-              решения для профессионалов в России.</p></div>
+          <div class="partnership__description"><p>С целью предоставить качественные продукты и сервисные решения для профессионалов в России.</p></div>
         </div>
         <div class="partnership__controls">
-          <button class="btn btn--secondary" type="button" data-toggle="modal"
-                  data-target="#contactModal">Предложить сотрудничество
+          <button class="btn btn--secondary" type="button" data-toggle="modal" data-target="#contactModal">Предложить сотрудничество
           </button>
         </div>
         <div class="partnership__list">
