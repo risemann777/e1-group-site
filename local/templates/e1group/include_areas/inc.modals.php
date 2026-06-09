@@ -21,7 +21,7 @@ if (!defined ('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
             "ace.group:landing.feedback.form",
             ".default",
             array(
-                "EMAIL_TO" => "admin@e1group.ru",
+                "EMAIL_TO" => "info@e1-group.ru",
                 "EVENT_MESSAGE_ID" => array(
                     0 => "24",
                 ),

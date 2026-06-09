@@ -40,7 +40,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
           "ace.group:landing.feedback.form",
           ".default",
           array(
-              "EMAIL_TO" => "admin@e1group.ru",
+              "EMAIL_TO" => "info@e1-group.ru",
               "EVENT_MESSAGE_ID" => array(
                   0 => "24",
               ),
@@ -96,10 +96,12 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
     </div>
     <div class="footer__middle-right">
       <div class="footer-contact">
+        <?php /*?>
         <div class="footer-contact__item">
           <div class="footer-contact__label">Телефон:</div>
           <div class="footer-contact__value"><a href="tel:79000000000">+7 (900) 000-00-00</a></div>
         </div>
+        <?*/?>
         <div class="footer-contact__item">
           <div class="footer-contact__label">Почта:</div>
           <div class="footer-contact__value"><a href="mailto:info@e1-group.ru">info@e1-group.ru</a></div>
