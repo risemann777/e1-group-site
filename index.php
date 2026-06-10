@@ -46,14 +46,14 @@ $APPLICATION->SetPageProperty("NOT_SHOW_HEADLINE", "Y");
             <div class="stat__label">Производственная мощность завода ЭНГЕЛЬС</div>
             <div class="stat__info">
               <div class="stat__value">>1.5</div>
-              <div class="stat__term">млн. шт.</div>
+              <div class="stat__term">млн</div>
             </div>
           </div>
           <div class="stat__item">
             <div class="stat__label">Продажи электроинструмента DongCheng по всему миру</div>
             <div class="stat__info">
               <div class="stat__value">>30</div>
-              <div class="stat__term">млн. шт.</div>
+              <div class="stat__term">млн</div>
             </div>
           </div>
           <div class="stat__item">
