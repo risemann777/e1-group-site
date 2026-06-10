@@ -163,7 +163,7 @@ $submitButtonClassName = $arParams["FORM_THEME"] === 'light' ? "btn--secondary" 
     ?>
     <input type="submit" class="btn <?=$submitButtonClassName?>" name="submit" value="<?=GetMessage("MFT_SUBMIT")?>">
     <div class="form__policy">
-      <div class="checkbox checkbox--policy">
+      <div class="checkbox checkbox--policy checkbox--theme-<?=$arParams["FORM_THEME"]?>">
         <label>
           <input type="checkbox" name="policy"<?php if($arResult["POLICY"] == "Y") echo " checked";?>>
           <span class="checkbox__cr"></span>
