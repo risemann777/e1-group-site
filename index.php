@@ -311,17 +311,22 @@ $APPLICATION->SetPageProperty("NOT_SHOW_HEADLINE", "Y");
     <div class="career__container">
       <div class="career__col">
         <div class="career__title">Стройте карьеру с нами</div>
-        <div class="career__description"><p>Команда «Е1-Групп» — сплоченный коллектив с международной
+        <div class="career__description">
+          <p>Команда «Е1-Групп» — сплоченный коллектив с международной
             экспертизой в области продукта, продаж, маркетинга, процессов, технической и сервисной поддержки
             продукта. Приглашаем стать его частью!</p>
           <p>Чтобы ознакомиться с текущими вакансиями, пожалуйста перейдите в профиль компании на
             HeadHunter. Там вы найдете подробную информацию о доступных возможностях! Будем рады видеть
-            Вас в нашем офисе!</p></div>
-        <div class="career__controls"><a class="btn btn--primary" href="https://hh.ru">Смотреть вакансии на
-            HH</a></div>
+            Вас в нашем офисе!</p>
+        </div>
+        <div class="career__controls"><a class="btn btn--primary" href="https://hh.ru">Смотреть вакансии на HH</a></div>
       </div>
       <div class="career__col">
-        <div class="career__pic"><img src="/upload/main/images/business-team-working-min.jpg"></div>
+        <div class="career__video">
+          <video autoplay loop muted>
+            <source src="/upload/main/media/hr_video.mp4" type="video/mp4">
+          </video>
+        </div>
       </div>
     </div>
   </section>
