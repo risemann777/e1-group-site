@@ -2,6 +2,7 @@
 $MESS ['MFT_NAME'] = "Name / Organization";
 $MESS ['MFT_PHONE'] = "Your phone";
 $MESS ['MFT_EMAIL'] = "Your E-mail";
+$MESS ['MFT_ADDRESS_CITY'] = "Город";
 $MESS ['MFT_COMMENT'] = "Message";
 $MESS ['MFT_CAPTCHA'] = "CAPTCHA";
 $MESS ['MFT_CAPTCHA_CODE'] = "Type the letters you see on the picture";

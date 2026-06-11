@@ -2,6 +2,7 @@
 $MESS ['MFT_NAME'] = "Ваше имя";
 $MESS ['MFT_PHONE'] = "Телефон";
 $MESS ['MFT_EMAIL'] = "E-mail";
+$MESS ['MFT_ADDRESS_CITY'] = "Город";
 $MESS ['MFT_COMMENT'] = "Комментарий";
 $MESS ['MFT_CAPTCHA'] = "Защита от автоматических сообщений";
 $MESS ['MFT_CAPTCHA_CODE'] = "Введите слово на картинке";

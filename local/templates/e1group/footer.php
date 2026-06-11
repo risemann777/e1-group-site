@@ -44,10 +44,13 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
               "EVENT_MESSAGE_ID" => array(
                   0 => "24",
               ),
-              "FORM_NAME" => "Связаться с нами (в футере)",
+              "FORM_NAME" => "Связаться с нами в футере",
               "OK_TEXT" => "Спасибо, ваше сообщение принято.",
               "REQUIRED_FIELDS" => array(
                   0 => "NAME",
+                  1 => "PHONE",
+                  2 => "EMAIL",
+                  3 => "ADDRESS_CITY",
               ),
               "USE_CAPTCHA" => "Y",
               "USE_GOOGLE_RECAPTCHA" => "N",

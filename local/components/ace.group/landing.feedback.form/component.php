@@ -17,6 +17,7 @@ use Bitrix\Main\Application;
 $kernelSession = Application::getInstance()->getKernelSession();
 $rsSite = CSite::GetByID(SITE_ID);
 $arSite = $rsSite->Fetch();
+// PR($arSite);
 
 $arResult["PARAMS_HASH"] = md5(serialize($arParams).$this->GetTemplateName());
 
@@ -172,6 +173,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["submit"]) && (!isset($
 
 			if((empty($arParams["REQUIRED_FIELDS"]) || in_array("COMMENT", $arParams["REQUIRED_FIELDS"])) && mb_strlen(trim($_POST["user_comment"])) <= 3)
 				$arResult["ERROR_MESSAGE"]["user_comment"] = GetMessage("MF_REQ_COMMENT");
+
+			if((empty($arParams["REQUIRED_FIELDS"]) || in_array("ADDRESS_CITY", $arParams["REQUIRED_FIELDS"])) && mb_strlen(trim($_POST["user_address_city"])) <= 2)
+				$arResult["ERROR_MESSAGE"]["user_address_city"] = GetMessage("MF_REQ_ADDRESS_CITY");
 		}
 
     if (!isset($_POST["policy"])) {
@@ -238,6 +242,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["submit"]) && (!isset($
 				"AUTHOR_PHONE" => $_POST["user_phone"],
 				"AUTHOR_EMAIL" => $_POST["user_email"],
 				"AUTHOR_COMMENT" => $_POST["user_comment"],
+				"AUTHOR_ADDRESS_CITY" => $_POST["user_address_city"],
 				"EMAIL_TO" => $arParams["EMAIL_TO"],
 				"FORM_NAME" => $arParams["FORM_NAME"],
 			);
@@ -272,6 +277,42 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["submit"]) && (!isset($
 			$_SESSION["MF_EMAIL"] = htmlspecialcharsbx($_POST["user_email"]);
 			$event = new \Bitrix\Main\Event('main', 'onFeedbackFormSubmit', $arFields);
 			$event->send();
+
+      $currentURL = getCurrentURL();
+      $urlQuery = parse_url($currentURL, PHP_URL_QUERY);
+      parse_str($urlQuery, $urlParams);
+
+      // Lead for Bitrix24
+      $leadData = [
+        'fields' => [
+          'TITLE' => $arSite["NAME"] . ': заявка с формы ' . $arParams["FORM_NAME"],
+          'NAME' => trim(htmlspecialcharsbx($_POST["user_name"])),
+          'PHONE' => [
+            ['VALUE' => trim(htmlspecialcharsbx($_POST["user_phone"])), 'VALUE_TYPE' => 'WORK']
+          ],
+          'EMAIL' => [
+            ['VALUE' => trim(htmlspecialcharsbx($_POST["user_email"])), 'VALUE_TYPE' => 'WORK']
+          ],
+          'ADDRESS_CITY' => trim(htmlspecialcharsbx($_POST["user_address_city"])),
+          'COMMENTS' => trim(htmlspecialcharsbx($_POST["user_comment"])),
+          'SOURCE_ID' => 'WEB',
+          'SOURCE_DESCRIPTION' => 'Сайт ' . $arSite["NAME"] . ' / форма " ' . $arParams["FORM_NAME"] . '"',
+        ],
+        'params' => [
+          'REGISTER_SONET_EVENT' => 'Y' // Создать событие в "живой ленте" (опционально)
+        ]
+      ];
+
+      if ($urlParams['utm_source']) $leadData['fields']['UTM_SOURCE'] = $urlParams['utm_source'];
+      if ($urlParams['utm_medium']) $leadData['fields']['UTM_MEDIUM'] = $urlParams['utm_medium'];
+      if ($urlParams['utm_campaign']) $leadData['fields']['UTM_CAMPAIGN'] = $urlParams['utm_campaign'];
+      if ($urlParams['utm_content']) $leadData['fields']['UTM_CONTENT'] = $urlParams['utm_content'];
+      if ($urlParams['utm_term']) $leadData['fields']['UTM_TERM'] = $urlParams['utm_term'];
+
+      $leadAddResult = executeB24Rest("crm.lead.add", $leadData);
+      $logFile = $_SERVER["DOCUMENT_ROOT"] . "/logs/b24_rest.log";
+      file_put_contents($logFile, PHP_EOL . date('Y-m_d H:i:s') . ' New lead ID='. $leadAddResult['result'] . PHP_EOL, FILE_APPEND);
+
 			LocalRedirect($APPLICATION->GetCurPageParam("success=".$arResult["PARAMS_HASH"], Array("success")));
 		}
 
@@ -279,6 +320,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["submit"]) && (!isset($
 		$arResult["AUTHOR_NAME"] = trim(htmlspecialcharsbx($_POST["user_name"]));
 		$arResult["AUTHOR_PHONE"] = trim(htmlspecialcharsbx($_POST["user_phone"]));
 		$arResult["AUTHOR_EMAIL"] = trim(htmlspecialcharsbx($_POST["user_email"]));
+		$arResult["AUTHOR_ADDRESS_CITY"] = trim(htmlspecialcharsbx($_POST["user_address_city"]));
 		$arResult["POLICY"] = isset($_POST["policy"]) ? "Y" : "N";
 	}
 	else

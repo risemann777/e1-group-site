@@ -11,6 +11,7 @@ $MESS ['MFP_ALL_REQ'] = "(все необязательные)";
 $MESS ['MFP_NAME'] = "Имя";
 $MESS ['MFP_PHONE'] = "Телефон";
 $MESS ['MFP_COMMENT'] = "Комментарий";
+$MESS ['MFP_ADDRESS_CITY'] = "Город";
 $MESS ['MFP_EMAIL_TEMPLATES'] = "Почтовые шаблоны для отправки письма";
 $MESS ['MFP_FORM_THEME'] = "Тема формы";
 $MESS ['MFP_FORM_THEME_DARK'] = "Темная";

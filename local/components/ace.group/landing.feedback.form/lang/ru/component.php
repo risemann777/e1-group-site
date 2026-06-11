@@ -13,4 +13,5 @@ $MESS ['MF_FIELD_CONTAINS_INVALID_CHARACTERS'] = "Поле содержит не
 $MESS ['MF_FIELD_CONTAINS_INVALID_WORDS'] = "Поле содержит недопустимые слова";
 $MESS ['MF_RECAPTCHA_WRONG'] = "Ваши действия похожи на автоматические! Попробуйте обновить страницу и отправить форму заново.";
 $MESS ['MF_REQ_POLICY'] = "Вы должны согласиться с политикой обработки персональных данных!";
+$MESS ['MF_REQ_ADDRESS_CITY'] = "Укажите город";
 $MESS ['MF_AUTHOR_SCORE_NOT_DEFINED'] = "Не определен";

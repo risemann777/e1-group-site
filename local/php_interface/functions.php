@@ -62,3 +62,46 @@ function ShowHeadline() {
   global $APPLICATION;
   $APPLICATION->AddBufferContent("GetHeadline");
 }
+
+/**
+ * executeRest();
+ *
+ * Rest для Битрикс24
+$params = array(
+"id" => $deal["ID"],
+"fields" => array(
+"ASSIGNED_BY_ID" => $nextUser,
+"UF_CRM_1625657146" => $nextUser,
+),
+executeB24Rest("crm.activity.update", $params);
+
+ *
+ *
+ *
+ */
+
+function executeB24Rest($method, $array = array())
+{
+  $webhook = B24_WEBHOOK_URL;
+  $queryUrl = $webhook . $method . ".json";
+  $queryData = http_build_query(array_merge($array));
+
+  $curl = curl_init();
+  curl_setopt_array($curl, array(
+      CURLOPT_SSL_VERIFYPEER => 0,
+      CURLOPT_POST => 1,
+      CURLOPT_HEADER => 0,
+      CURLOPT_RETURNTRANSFER => 1,
+      CURLOPT_URL => $queryUrl,
+      CURLOPT_POSTFIELDS => $queryData,
+  ));
+
+  $result = curl_exec($curl);
+  curl_close($curl);
+  return json_decode($result, true);
+}
+
+function getCurrentURL(): string {
+  $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+  return $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+}

@@ -11,6 +11,7 @@ $MESS ['MFP_ALL_REQ'] = "(all non-required)";
 $MESS ['MFP_NAME'] = "Name";
 $MESS ['MFP_PHONE'] = "Phone";
 $MESS ['MFP_COMMENT'] = "Comment";
+$MESS ['MFP_ADDRESS_CITY'] = "City";
 $MESS ['MFP_EMAIL_TEMPLATES'] = "E-mail Templates";
 $MESS ['MFP_FORM_THEME'] = "Тема формы";
 $MESS ['MFP_FORM_THEME_DARK'] = "Dark";

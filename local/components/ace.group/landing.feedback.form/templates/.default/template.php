@@ -86,6 +86,29 @@ $submitButtonClassName = $arParams["FORM_THEME"] === 'light' ? "btn--secondary" 
       </div>
     </div>
     <div class="form__field">
+      <div class="form__input<?=(!empty($arResult["ERROR_MESSAGE"]["user_address_city"]) ? " form__input--error" : "")?>">
+        <label>
+          <span class="form__label">
+            <?=GetMessage("MFT_EMAIL")?><?php if(empty($arParams["REQUIRED_FIELDS"]) || in_array("EMAIL", $arParams["REQUIRED_FIELDS"])):?><span class="mf-req">*</span><?php endif?>
+          </span>
+          <input
+              type="text"
+              name="user_address_city"
+              class="form__control"
+              value="<?=$arResult["AUTHOR_ADDRESS_CITY"]?>"
+              placeholder="<?=GetMessage("MFT_ADDRESS_CITY")?><?php if(empty($arParams["REQUIRED_FIELDS"]) || in_array("ADDRESS_CITY", $arParams["REQUIRED_FIELDS"])):?> *<?php endif?>"
+          >
+        </label>
+        <?php
+        if(!empty($arResult["ERROR_MESSAGE"]["user_address_city"])) {
+          ?>
+          <div class="form__input-error"><?=$arResult["ERROR_MESSAGE"]["user_address_city"]?></div>
+          <?php
+        }
+        ?>
+      </div>
+    </div>
+    <div class="form__field">
       <div class="form__input<?=(!empty($arResult["ERROR_MESSAGE"]["user_comment"]) ? " form__input--error" : "")?>">
         <label>
           <span class="form__label">

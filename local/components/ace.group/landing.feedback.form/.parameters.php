@@ -46,7 +46,8 @@ $arComponentParameters = array(
         "NAME" => GetMessage("MFP_NAME"),
         "PHONE" => GetMessage("MFP_PHONE"),
         "EMAIL" => "E-mail",
-        "COMMENT" => GetMessage("MFP_COMMENT")
+        "COMMENT" => GetMessage("MFP_COMMENT"),
+        "ADDRESS_CITY" => GetMessage("MFP_ADDRESS_CITY"),
       ],
 			"DEFAULT"=>"", 
 			"COLS"=>25, 
