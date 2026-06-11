@@ -18,6 +18,8 @@ robots.txt
 /bitrix
 /upload
 /vendor
+/debug
+/logs
 web.config
 composer.json
 composer.lock
