@@ -324,7 +324,7 @@ $APPLICATION->SetPageProperty("NOT_SHOW_HEADLINE", "Y");
       <div class="career__col">
         <div class="career__video">
           <video autoplay loop muted>
-            <source src="/upload/main/media/hr_video.mp4" type="video/mp4">
+            <source src="/upload/main/media/hr_video_looped.mp4" type="video/mp4">
           </video>
         </div>
       </div>
