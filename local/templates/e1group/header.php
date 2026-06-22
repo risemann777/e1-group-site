@@ -50,7 +50,7 @@ include("include_areas/svg_icons.php");
                 <use xlink:href="#svg-icon-menu-dots"></use>
               </svg>
             </span>
-            <a href="#products">Продукция и услуги</a>
+            <a href="/products/">Продукция и услуги</a>
           </div>
           <?php include("partial/header.nav.php");?>
         </div>
