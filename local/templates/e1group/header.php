@@ -35,7 +35,7 @@ $asset = Asset::getInstance();
 $APPLICATION->ShowPanel();
 include("include_areas/svg_icons.php");
 ?>
-<div class="layout layout--pb-0">
+<div class="layout <?php $APPLICATION->ShowProperty("layoutClasses", "layout--default");?>">
   <?php include("partial/header.full.menu.php");?>
   <header class="layout__header header header--sticky">
     <div class="header__container">

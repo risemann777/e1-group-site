@@ -9,7 +9,7 @@
               <div class="mobile-nav mobile-menu__nav">
                 <div class="mobile-nav__item">
                   <div class="mobile-nav__head">
-                    <a class="mobile-nav__link" href="#products" data-smooth-scroll="true"><span>Продукция и услуги</span></a>
+                    <a class="mobile-nav__link" href="/products/"><span>Продукция и услуги</span></a>
                     <div class="mobile-nav__toggle">
                       <svg class="svg-icon" viewBox="0 0 24 24" width="24" height="24">
                         <use xlink:href="#svg-mobile-menu-arrow"></use>
@@ -18,35 +18,35 @@
                   </div>
                   <div class="mobile-nav__sub">
                     <ul>
-                      <li><a href="#"><span>Решения для строительства</span></a></li>
-                      <li><a href="#"><span>Решения по управлению парком инструментов</span></a></li>
-                      <li><a href="#"><span>Производство и разработка продукта</span></a></li>
-                      <li><a href="#"><span>Гарантийное обслуживание</span></a></li>
+                      <li><a href="https://engelstool.ru" target="_blank"><span>ЭНГЕЛЬС</span></a></li>
+                      <li><a href="https://dongchengtool.ru"><span>DongCheng</span></a></li>
+                      <li><a href="https://dctool.ru"><span>Distribution for Construction</span></a></li>
                     </ul>
                   </div>
                 </div>
                 <div class="mobile-nav__item">
                   <div class="mobile-nav__head">
-                    <a class="mobile-nav__link" href="#partnership" data-smooth-scroll="true"><span>Партнеры</span></a>
+                    <a class="mobile-nav__link" href="/#partnership" data-smooth-scroll="true"><span>Партнеры</span></a>
                   </div>
                 </div>
                 <div class="mobile-nav__item">
                   <div class="mobile-nav__head">
-                    <a class="mobile-nav__link" href="#advantage" data-smooth-scroll="true"><span>О компании</span></a>
-                  </div>
-                </div>
-                <div class="mobile-nav__item">
-                  <div class="mobile-nav__head"><a class="mobile-nav__link" href="#career" data-smooth-scroll="true"><span>Карьера</span></a>
+                    <a class="mobile-nav__link" href="/about/"><span>О компании</span></a>
                   </div>
                 </div>
                 <div class="mobile-nav__item">
                   <div class="mobile-nav__head">
-                    <a class="mobile-nav__link" href="#news" data-smooth-scroll="true"><span>Медиа</span></a>
+                    <a class="mobile-nav__link" href="/#career" data-smooth-scroll="true"><span>Карьера</span></a>
                   </div>
                 </div>
                 <div class="mobile-nav__item">
                   <div class="mobile-nav__head">
-                    <a class="mobile-nav__link" href="#contacts" data-smooth-scroll="true"><span>Контакты</span></a>
+                    <a class="mobile-nav__link" href="/news/"><span>Медиа</span></a>
+                  </div>
+                </div>
+                <div class="mobile-nav__item">
+                  <div class="mobile-nav__head">
+                    <a class="mobile-nav__link" href="/contacts/"><span>Контакты</span></a>
                   </div>
                 </div>
               </div>
@@ -56,13 +56,12 @@
             </div>
           </div>
         </div>
-        <div class="full-menu__desktop">
+        <div class="full-menu__desktop" style="background-image:url(<?=SITE_TEMPLATE_PATH?>/assets/images/menu_logo.svg)">
           <div class="product-menu">
             <ul class="product-menu__list">
-              <li class="product-menu__item"><a class="product-menu__link" href="#">Решения для строительства</a></li>
-              <li class="product-menu__item"><a class="product-menu__link" href="#">Решения по управлению парком инструментов</a></li>
-              <li class="product-menu__item"><a class="product-menu__link" href="#">Производство и разработка продукта</a></li>
-              <li class="product-menu__item"><a class="product-menu__link" href="#">Гарантийное обслуживание</a></li>
+              <li class="product-menu__item"><a class="product-menu__link" href="https://engelstool.ru" target="_blank">ЭНГЕЛЬС</a></li>
+              <li class="product-menu__item"><a class="product-menu__link" href="https://dongchengtool.ru" target="_blank">DongCheng</a></li>
+              <li class="product-menu__item"><a class="product-menu__link" href="https://dctool.ru" target="_blank">Distribution for Construction</a></li>
             </ul>
           </div>
         </div>

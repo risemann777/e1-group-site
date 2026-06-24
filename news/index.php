@@ -1,7 +1,12 @@
 <?php
+global $APPLICATION;
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Новости");
-?><?$APPLICATION->IncludeComponent(
+$APPLICATION->SetTitle("Медиа компании");
+$APPLICATION->SetPageProperty("title", "Медиа компании | Е1-Групп");
+$APPLICATION->SetPageProperty("layoutClasses", "layout--news");
+?>
+
+<?$APPLICATION->IncludeComponent(
 	"bitrix:news", 
 	"news", 
 	array(
@@ -68,7 +73,7 @@ $APPLICATION->SetTitle("Новости");
 		"SEF_MODE" => "Y",
 		"SET_LAST_MODIFIED" => "N",
 		"SET_STATUS_404" => "N",
-		"SET_TITLE" => "Y",
+		"SET_TITLE" => "N",
 		"SHOW_404" => "N",
 		"SORT_BY1" => "ACTIVE_FROM",
 		"SORT_BY2" => "SORT",
@@ -90,4 +95,6 @@ $APPLICATION->SetTitle("Новости");
 		)
 	),
 	false
-);?><?php require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?>
+
+<?php require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
