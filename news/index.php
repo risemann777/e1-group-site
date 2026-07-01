@@ -27,7 +27,7 @@ $APPLICATION->SetPageProperty("layoutClasses", "layout--news");
 		"DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",
 		"DETAIL_DISPLAY_TOP_PAGER" => "N",
 		"DETAIL_FIELD_CODE" => [
-			0 => "",
+			0 => "PREVIEW_PICTURE",
 			1 => "",
 		],
 		"DETAIL_PAGER_SHOW_ALL" => "Y",

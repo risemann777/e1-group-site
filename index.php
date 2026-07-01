@@ -3,14 +3,20 @@
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetPageProperty("NOT_SHOW_NAV_CHAIN", "Y");
 $APPLICATION->SetPageProperty("NOT_SHOW_HEADLINE", "Y");
-$APPLICATION->SetTitle("E1-Group");
+$APPLICATION->SetTitle("E1-Group / Е1 Групп — решения для строительства, электроинструмента и сервисной поддержки");
 $APPLICATION->SetPageProperty("title", "E1-Group / Е1 Групп — электроинструмент, техника и IT");
 $APPLICATION->SetPageProperty("description", "E1-Group / Е1 Групп развивает решения для строительства: профессиональный электроинструмент, строительную технику, сервис и IT для управления парком техники.");
 $APPLICATION->SetPageProperty("keywords", "E1-Group, Е1 Групп, электроинструмент, строительная техника, профессиональный инструмент, сервисная поддержка, IT-решения, малая механизация");
 $APPLICATION->SetPageProperty("canonical", "https://e1-group.ru/");
+$APPLICATION->SetPageProperty("summary_large_image", "https://e1-group.ru/upload/og/e1-group-main.jpg");
+$APPLICATION->SetPageProperty("og_description", "Профессиональный электроинструмент, строительная техника, сервисная поддержка и IT-решения для управления парком техники.");
+$APPLICATION->SetPageProperty("og_image_width", "1200");
+$APPLICATION->SetPageProperty("og_image_height", "630");
+$APPLICATION->SetPageProperty("twitter_description", "Профессиональный электроинструмент, строительная техника, сервисная поддержка и IT-решения для управления парком техники.");
 ?>
 
   <div class="hero">
+    <h1 class="hero__title visually-hidden"><?php $APPLICATION->ShowTitle(false);?></h1>
     <div class="hero__video">
       <video autoplay loop muted>
         <source src="/upload/main/media/hero_desktop.mp4" type="video/mp4">

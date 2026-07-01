@@ -23,15 +23,20 @@ $asset = Asset::getInstance();
   <meta property="og:locale" content="ru_RU">
   <meta property="og:site_name" content="E1-Group / Е1 Групп">
   <meta property="og:title" content="<?php $APPLICATION->ShowProperty('title'); ?>" />
-  <meta property="og:description" content="Профессиональный электроинструмент, строительная техника, сервисная поддержка и IT-решения для управления парком техники.">
+  <meta property="og:description" content="<?php $APPLICATION->ShowProperty('og_description'); ?>">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://e1-group.ru/">
-  <meta property="og:image" content="https://e1-group.ru/upload/og/e1-group-main.jpg">
-  <meta property="og:image:secure_url" content="https://e1-group.ru/upload/og/e1-group-main.jpg">
+  <meta property="og:image" content="<?php $APPLICATION->ShowProperty('summary_large_image'); ?>">
+  <meta property="og:image:secure_url" content="<?php $APPLICATION->ShowProperty('summary_large_image'); ?>">
   <meta property="og:image:type" content="image/png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="<?php $APPLICATION->ShowProperty('og_image_width'); ?>">
+  <meta property="og:image:height" content="<?php $APPLICATION->ShowProperty('og_image_height'); ?>">
   <meta property="og:image:alt" content="E1-Group / Е1 Групп">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="<?php $APPLICATION->ShowProperty('title'); ?>">
+  <meta name="twitter:description" content="<?php $APPLICATION->ShowProperty('twitter_description'); ?>">
+  <meta name="twitter:image" content="<?php $APPLICATION->ShowProperty('summary_large_image'); ?>">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">

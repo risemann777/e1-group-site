@@ -16,7 +16,7 @@ $this->setFrameMode(true);
 <section class="news news--index news--slider" id="news">
   <div class="news__container">
     <div class="news__heading">
-      <div class="news__title">Медиа Группы компаний</div>
+      <h2 class="news__title">Медиа Группы компаний</h2>
       <div class="news__controls">
         <div class="news__nav news__nav-prev">
           <svg class="svg-icon" viewBox="0 0 24 24" width="24" height="24">
@@ -67,7 +67,7 @@ $this->setFrameMode(true);
                   }?>
                   <?php if($arParams["DISPLAY_NAME"]!="N" && $arItem["NAME"]) {
                     ?>
-                    <div class="news-card__title"><?=$arItem["NAME"]?></div>
+                    <h3 class="news-card__title"><?=$arItem["NAME"]?></h3>
                     <?php
                   }?>
                 </div>

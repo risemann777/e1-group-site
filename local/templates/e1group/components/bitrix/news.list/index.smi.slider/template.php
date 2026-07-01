@@ -17,7 +17,7 @@ if (count($arResult["ITEMS"]) > 0) {
   ?>
   <section class="mass-media" id="massMedia">
     <div class="mass-media__head">
-      <div class="mass-media__title">СМИ об АО «Е1-Групп»</div>
+      <h2 class="mass-media__title">СМИ об АО «Е1-Групп»</h2>
       <div class="mass-media__controls">
         <div class="mass-media__nav mass-media__nav-prev">
           <svg class="svg-icon" viewBox="0 0 24 24" width="24" height="24">
