@@ -13,6 +13,16 @@ function PR($ar) {
   }
 }
 
+function xdump (mixed $data, bool $isDisplay = false) {
+  if ($isDisplay) {
+    echo '<pre class="debugABV" style="display: block">';
+  } else {
+    echo '<pre class="debugABV" style="display: none">';
+  }
+  print_r($data);
+  echo '</pre>';
+}
+
 function findSubstringsByArray($text, array $stringsArrayToFind): array {
   $results = [];
 

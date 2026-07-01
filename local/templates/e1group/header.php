@@ -37,6 +37,7 @@ include("include_areas/svg_icons.php");
 ?>
 <div class="layout <?php $APPLICATION->ShowProperty("layoutClasses", "layout--default");?>">
   <?php include("partial/header.full.menu.php");?>
+  <?php include("partial/header.search.menu.php");?>
   <header class="layout__header header header--sticky">
     <div class="header__container">
       <div class="header__left">

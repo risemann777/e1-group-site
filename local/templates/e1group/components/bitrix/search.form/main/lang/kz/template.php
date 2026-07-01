@@ -1,0 +1,3 @@
+<?php
+$MESS["BSF_T_SEARCH_BUTTON"] = "Іздеу";
+$MESS ['BSF_T_SEARCH_INPUT_PLACEHOLDER'] = "Поиск";
