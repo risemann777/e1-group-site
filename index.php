@@ -2,8 +2,12 @@
 /** @var CMain $APPLICATION */
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetPageProperty("NOT_SHOW_NAV_CHAIN", "Y");
-$APPLICATION->SetTitle("E1-Group");
 $APPLICATION->SetPageProperty("NOT_SHOW_HEADLINE", "Y");
+$APPLICATION->SetTitle("E1-Group");
+$APPLICATION->SetPageProperty("title", "E1-Group / Е1 Групп — электроинструмент, техника и IT");
+$APPLICATION->SetPageProperty("description", "E1-Group / Е1 Групп развивает решения для строительства: профессиональный электроинструмент, строительную технику, сервис и IT для управления парком техники.");
+$APPLICATION->SetPageProperty("keywords", "E1-Group, Е1 Групп, электроинструмент, строительная техника, профессиональный инструмент, сервисная поддержка, IT-решения, малая механизация");
+$APPLICATION->SetPageProperty("canonical", "https://e1-group.ru/");
 ?>
 
   <div class="hero">

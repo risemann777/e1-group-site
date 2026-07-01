@@ -19,6 +19,20 @@ $asset = Asset::getInstance();
   <title><?php $APPLICATION->ShowTitle();?></title>
   <?php
   $APPLICATION->ShowHead();?>
+  <meta name="theme-color" content="#E01F26">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="E1-Group / Е1 Групп">
+  <meta property="og:title" content="<?php $APPLICATION->ShowProperty('title'); ?>" />
+  <meta property="og:description" content="Профессиональный электроинструмент, строительная техника, сервисная поддержка и IT-решения для управления парком техники.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://e1-group.ru/">
+  <meta property="og:image" content="https://e1-group.ru/upload/og/e1-group-main.png">
+  <meta property="og:image:secure_url" content="https://e1-group.ru/upload/og/e1-group-main.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="E1-Group / Е1 Групп">
+
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">

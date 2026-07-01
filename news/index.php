@@ -9,7 +9,7 @@ $APPLICATION->SetPageProperty("layoutClasses", "layout--news");
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news", 
 	"news", 
-	array(
+	[
 		"ADD_ELEMENT_CHAIN" => "Y",
 		"ADD_SECTIONS_CHAIN" => "N",
 		"AJAX_MODE" => "N",
@@ -26,18 +26,18 @@ $APPLICATION->SetPageProperty("layoutClasses", "layout--news");
 		"DETAIL_ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",
 		"DETAIL_DISPLAY_TOP_PAGER" => "N",
-		"DETAIL_FIELD_CODE" => array(
+		"DETAIL_FIELD_CODE" => [
 			0 => "",
 			1 => "",
-		),
+		],
 		"DETAIL_PAGER_SHOW_ALL" => "Y",
 		"DETAIL_PAGER_TEMPLATE" => "",
 		"DETAIL_PAGER_TITLE" => "Страница",
-		"DETAIL_PROPERTY_CODE" => array(
+		"DETAIL_PROPERTY_CODE" => [
 			0 => "",
 			1 => "",
-		),
-		"DETAIL_SET_CANONICAL_URL" => "N",
+		],
+		"DETAIL_SET_CANONICAL_URL" => "Y",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"DISPLAY_DATE" => "Y",
 		"DISPLAY_NAME" => "Y",
@@ -49,14 +49,14 @@ $APPLICATION->SetPageProperty("layoutClasses", "layout--news");
 		"IBLOCK_TYPE" => "news",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 		"LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",
-		"LIST_FIELD_CODE" => array(
+		"LIST_FIELD_CODE" => [
 			0 => "",
 			1 => "",
-		),
-		"LIST_PROPERTY_CODE" => array(
+		],
+		"LIST_PROPERTY_CODE" => [
 			0 => "",
 			1 => "",
-		),
+		],
 		"MESSAGE_404" => "",
 		"META_DESCRIPTION" => "-",
 		"META_KEYWORDS" => "-",
@@ -88,12 +88,12 @@ $APPLICATION->SetPageProperty("layoutClasses", "layout--news");
 		"USE_SEARCH" => "N",
 		"USE_SHARE" => "N",
 		"COMPONENT_TEMPLATE" => "news",
-		"SEF_URL_TEMPLATES" => array(
+		"SEF_URL_TEMPLATES" => [
 			"news" => "",
 			"section" => "",
 			"detail" => "#ELEMENT_ID#/",
-		)
-	),
+		]
+	],
 	false
 );?>
 
