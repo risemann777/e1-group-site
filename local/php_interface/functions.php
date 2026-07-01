@@ -23,6 +23,22 @@ function xdump (mixed $data, bool $isDisplay = false) {
   echo '</pre>';
 }
 
+function pluralForm($number, $words = ['Товар', 'Товара', 'Товаров']) {
+  $cases = [2, 0, 1, 1, 1, 2];
+  $position = ($number % 100 > 4 && $number % 100 < 20) ? 2 : $cases[min($number % 10, 5)];
+  return $words[$position];
+}
+
+function formatPhoneForTel($phone) {
+  if (empty($phone)) {
+    return 'tel:';
+  }
+
+  $cleaned = preg_replace('/[^\d+]/', '', $phone);
+
+  return 'tel:' . $cleaned;
+}
+
 function findSubstringsByArray($text, array $stringsArrayToFind): array {
   $results = [];
 
