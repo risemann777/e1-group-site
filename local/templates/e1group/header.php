@@ -26,8 +26,8 @@ $asset = Asset::getInstance();
   <meta property="og:description" content="Профессиональный электроинструмент, строительная техника, сервисная поддержка и IT-решения для управления парком техники.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://e1-group.ru/">
-  <meta property="og:image" content="https://e1-group.ru/upload/og/e1-group-main.png">
-  <meta property="og:image:secure_url" content="https://e1-group.ru/upload/og/e1-group-main.png">
+  <meta property="og:image" content="https://e1-group.ru/upload/og/e1-group-main.jpg">
+  <meta property="og:image:secure_url" content="https://e1-group.ru/upload/og/e1-group-main.jpg">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
