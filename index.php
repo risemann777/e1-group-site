@@ -329,7 +329,7 @@ $APPLICATION->SetPageProperty("twitter_description", "Профессиональ
             HeadHunter. Там вы найдете подробную информацию о доступных возможностях! Будем рады видеть
             Вас в нашем офисе!</p>
         </div>
-        <div class="career__controls"><a class="btn btn--primary" href="https://hh.ru">Смотреть вакансии на HH</a></div>
+        <div class="career__controls"><a class="btn btn--primary" target="_blank" href="https://hh.ru/employer/12659623?hhtmFrom=vacancy&tab=VACANCIES">Смотреть вакансии на HH</a></div>
       </div>
       <div class="career__col">
         <div class="career__video">
