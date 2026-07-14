@@ -34,7 +34,7 @@ $APPLICATION->SetPageProperty("layoutClasses", "layout--news");
 		"DETAIL_PAGER_TEMPLATE" => "",
 		"DETAIL_PAGER_TITLE" => "Страница",
 		"DETAIL_PROPERTY_CODE" => [
-			0 => "",
+			0 => "MORE_PHOTO",
 			1 => "",
 		],
 		"DETAIL_SET_CANONICAL_URL" => "Y",

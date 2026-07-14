@@ -21,7 +21,6 @@ $this->setFrameMode(true);
       <div class="news-detail__picture">
         <img
             class="detail_picture"
-            border="0"
             src="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>"
             width="<?=$arResult["DETAIL_PICTURE"]["WIDTH"]?>"
             height="<?=$arResult["DETAIL_PICTURE"]["HEIGHT"]?>"
@@ -53,3 +52,39 @@ $this->setFrameMode(true);
     </div>
   </div>
 </div>
+
+<?php if(!empty($arResult["GALLERY"])) {
+  ?>
+  <div class="news-detail__section">
+    <div class="news-detail__container">
+      <div class="gallery">
+        <div class="gallery__list">
+          <?php foreach($arResult["GALLERY"] as $arGalleryItem) {
+            ?>
+            <div class="gallery__item">
+              <figure class="gallery__figure">
+                <a href="<?=$arGalleryItem['BIG']['SRC']?>" data-caption="<?=$arGalleryItem['DESCRIPTION']?>" data-fancybox="galleryID_<?=$arResult['ID']?>">
+                  <picture class="gallery__picture">
+                    <?php if($arGalleryItem['SMALL']['WEBP']) {
+                      ?>
+                      <source srcset="<?=$arGalleryItem['SMALL']['WEBP']?>" type="image/webp">
+                      <?php
+                    }?>
+                    <img
+                        src="<?=$arGalleryItem['SMALL']['SRC']?>"
+                        width="<?=$arGalleryItem['SMALL']['WIDTH']?>"
+                        height="<?=$arGalleryItem['SMALL']['HEIGHT']?>"
+                        alt="<?=$arGalleryItem['DESCRIPTION']?>"
+                    />
+                  </picture>
+                </a>
+              </figure>
+            </div>
+            <?php
+          }?>
+        </div>
+      </div>
+    </div>
+  </div>
+  <?php
+}?>
