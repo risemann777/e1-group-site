@@ -17,18 +17,29 @@ $this->setFrameMode(true);
     <?if($arParams["DISPLAY_DATE"]!="N" && $arResult["DISPLAY_ACTIVE_FROM"]):?>
       <div class="news-detail__date"><?=$arResult["DISPLAY_ACTIVE_FROM"]?></div>
     <?endif;?>
-    <?if($arParams["DISPLAY_PICTURE"] != "N" && is_array($arResult["DETAIL_PICTURE"])):?>
+    <?php if($arParams["DISPLAY_PICTURE"] != "N" && is_array($arResult["DETAIL_PICTURE"])) {
+      $resizedDetailPicture = CFile::ResizeImageGet($arResult["DETAIL_PICTURE"]['ID'], ['width'=>2160, 'height'=>2160], BX_RESIZE_IMAGE_PROPORTIONAL, true);
+      $webPDetailPicture = SiteUtil::getWebP($resizedDetailPicture["src"], ['QUALITY' => IMG_QUALITY]);
+      ?>
       <div class="news-detail__picture">
-        <img
-            class="detail_picture"
-            src="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>"
-            width="<?=$arResult["DETAIL_PICTURE"]["WIDTH"]?>"
-            height="<?=$arResult["DETAIL_PICTURE"]["HEIGHT"]?>"
-            alt="<?=$arResult["DETAIL_PICTURE"]["ALT"]?>"
-            title="<?=$arResult["DETAIL_PICTURE"]["TITLE"]?>"
-        />
+        <picture>
+          <?php if($webPDetailPicture) {
+            ?>
+            <source srcset="<?=$webPDetailPicture['SRC']?>" type="image/webp">
+            <?php
+          }?>
+          <img
+              class="detail_picture"
+              src="<?=$resizedDetailPicture["src"]?>"
+              width="<?=$resizedDetailPicture["width"]?>"
+              height="<?=$resizedDetailPicture["height"]?>"
+              alt="<?=$arResult["DETAIL_PICTURE"]["ALT"]?>"
+              title="<?=$arResult["DETAIL_PICTURE"]["TITLE"]?>"
+          />
+        </picture>
       </div>
-    <?endif?>
+      <?php
+    }?>
     <div class="news-detail__content">
       <?php if($arResult["IPROPERTY_VALUES"]["ELEMENT_PAGE_TITLE"]) {
         ?>
