@@ -51,7 +51,7 @@ if ($tildaDataRaw === 'test=test') {
 
 logDebug($logFile, 'RAW DATA FROM TILDA', [
   'body' => $tildaDataRaw,
-  'parsed' => json_decode($tildaDataRaw, true),
+  'parsed' => [],
 ]);
 
 if (!$tildaDataRaw) {
@@ -59,12 +59,16 @@ if (!$tildaDataRaw) {
   die('No data received from Tilda.');
 }
 
-$data = json_decode($tildaDataRaw, true);
+// Тильда шлёт данные формы в формате application/x-www-form-urlencoded (key=value&key2=value2)
+$data = [];
+parse_str($tildaDataRaw, $data);
 
-if (!is_array($data)) {
+if (empty($data)) {
   http_response_code(400);
-  die('Invalid JSON format.');
+  die('Invalid form data.');
 }
+
+logDebug($logFile, 'PARSED DATA FROM TILDA', $data);
 
 // Проверка секретного ключа Tilda (настоятельно рекомендуется!)
 // Настройте его в параметрах экспорта форм в Tilda
