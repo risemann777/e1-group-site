@@ -5,11 +5,15 @@
  */
 
 // --- НАСТРОЙКИ ---
-$webhookToken = 'YOUR_WEBHOOK_TOKEN_HERE'; // Токен из входящего вебхука
-$bitrixDomain = 'e1-group.bitrix24.ru';    // Домен вашего портала без https://
-$entityTypeId = 1038;                      // ENTITY_TYPE_ID вашего смарт-процесса
-$assignedById = 1;                         // ID пользователя-ответственного в Б24
-$categoryId = 20;                         // ID пользователя-ответственного в Б24
+$b24Domain = 'e1-group.bitrix24.ru';  // Домен вашего портала без https://
+$b24webhookOwnerID = 1;                   // ID пользователя, создавшего вебхук
+$b24webhookToken = 'YOUR_WEBHOOK_TOKEN_HERE';    // Токен из входящего вебхука (B24_WEBHOOK_URL)
+$b24method = 'crm.item.add';              // вызываемый метод REST API
+$tildaSecret = '4f7c8d766e64fac4a00e';    // Секретный ключ Tilda (TILDA_SECRET_KEY)
+$entityTypeId = 1038;                     // Смарт-процесс (Сайт "Энгельс")
+$assignedById = 1;                        // ID пользователя-ответственного в Б24
+$categoryId = 20;                         // Формы (заявки)
+$stageId = 'DT1038_20:NEW';             // Первая стадия заявки
 
 // Коды полей смарт-процесса (замените на свои)
 // Стандартное поле "Название" элемента СП
@@ -43,51 +47,55 @@ if (!is_array($data)) {
 
 // Проверка секретного ключа Tilda (настоятельно рекомендуется!)
 // Настройте его в параметрах экспорта форм в Tilda
-if (empty($data['secret']) || $data['secret'] !== TILDA_SECRET_KEY) {
+if (empty($data['secret']) || $data['secret'] !== $tildaSecret) {
   http_response_code(403);
   die('Access denied: Invalid secret key.');
 }
 
 // --- МАППИНГ ДАННЫХ ---
 // Названия ключей массива зависят от того, как вы назвали переменные полей в настройках блока форм Tilda
-$title = trim((string)($data['form_name'] ?? 'Заявка с сайта')); // Название самого блока формы
+$formTitle = trim((string)($data['title'] ?? 'Заявка с сайта "Энгельс"')); // Название формы
+$orderType = trim((string)($data['order_type'] ?? 'Тип заявки не указан')); // Тип формы
 $phone = preg_replace('/\D/', '', $data['phone'] ?? ''); // Очистка номера от мусора
 $email = filter_var($data['email'] ?? '', FILTER_VALIDATE_EMAIL);
-$comment = trim((string)($data['message'] ?? ($data['comment'] ?? '')));
+$comment = trim((string)($data['message'] ?? ($data['comments'] ?? '')));
+$city = trim((string)($data['address_city'] ?? ''));
+$name = trim((string)($data['name'] ?? ''));
+$company = trim((string)($data['organization'] ?? ''));
+
+// Получаем уникальный ID заявки из Тильды
+$lead_id = $data['tranid'] ?? null;
 
 // Формирование названия элемента смарт-процесса
-$crmItemTitle = "Заявка: {$title}";
-if ($name = trim($data['name'] ?? '')) {
-  $crmItemTitle .= " | {$name}";
-}
-if ($phone) {
-  $crmItemTitle .= " | +7{$phone}";
-}
 
 // --- ПОДГОТОВКА ПАРАМЕТРОВ ДЛЯ API БИТРИКС24 ---
 $fields = [
-  'ENTITY_TYPE_ID' => $entityTypeId,
-  'FIELDS' => [
-    'TITLE' => mb_substr($crmItemTitle, 0, 255), // Ограничение длины заголовка
-    'ASSIGNED_BY_ID' => $assignedById,
+  'entityTypeId' => $entityTypeId,
+  'fields' => [
+    $fieldTitleCode => mb_substr($formTitle, 0, 255), // Ограничение длины заголовка
+    'categoryId' => $categoryId,
+    'stageId' => $stageId,
+    'assignedById' => $assignedById,
+    $fieldCityCode => $city,
+    $fieldNameCode => $name,
     $fieldPhoneCode => $phone,
-    $fieldEmailCode => $email ?: '',
+    $fieldEmailCode => $email,
+    $fieldCompanyCode => $company,
     $fieldCommentCode => $comment,
-
-    // Пример передачи UTM-меток, если они передаются скрытыми полями из Tilda
-    'UTM_SOURCE' => $data['utm_source'] ?? null,
-    'UTM_MEDIUM' => $data['utm_medium'] ?? null,
-    'UTM_CAMPAIGN' => $data['utm_campaign'] ?? null,
+    $fieldOrderSourceCode => 'Сайт Энгельс',
+    $fieldOrderUrlCode => 'https://engelstool.ru/',
+    $fieldOrderIdCode => $lead_id,
+    $fieldOrderTypeCode => $orderType,
   ]
 ];
 
 // Удаляем пустые значения, чтобы не засорять карточку сущности
-$fields['FIELDS'] = array_filter($fields['FIELDS'], function ($value) {
+$fields['fields'] = array_filter($fields['fields'], function ($value) {
   return $value !== null && $value !== '';
 });
 
 // --- ОТПРАВКА ЗАПРОСА В BITRIX24 ---
-$url = "https://{$bitrixDomain}/rest/{$webhookToken}/crm.item.add.json";
+$url = "https://{$b24Domain}/rest/{$b24webhookOwnerID}/{$b24webhookToken}/{$b24method}.json";
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $url);
