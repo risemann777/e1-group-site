@@ -30,8 +30,22 @@ $fieldOrderSourceCode = 'ufCrm8_1782916906428'; // Источник заявки
 $fieldOrderUrlCode = 'ufCrm8_1782916911908'; // URL страницы отправки
 $fieldOrderIdCode = 'ufCrm8_1782916920725'; // Уникальный ID заявки
 
+// --- ЛОГИРОВАНИЕ ---
+$logFile = __DIR__ . '/debug.log';
+
+function logDebug($logFile, $label, $data) {
+  $timestamp = date('Y-m-d H:i:s');
+  $entry = "\n[{$timestamp}] {$label}\n" . print_r($data, true) . "\n---\n";
+  file_put_contents($logFile, $entry, FILE_APPEND);
+}
+
 // --- ПОЛУЧЕНИЕ И ПРОВЕРКА ДАННЫХ ОТ TILDA ---
 $tildaDataRaw = file_get_contents('php://input');
+
+logDebug($logFile, 'RAW DATA FROM TILDA', [
+  'body' => $tildaDataRaw,
+  'parsed' => json_decode($tildaDataRaw, true),
+]);
 
 if (!$tildaDataRaw) {
   http_response_code(400);
@@ -48,6 +62,7 @@ if (!is_array($data)) {
 // Проверка секретного ключа Tilda (настоятельно рекомендуется!)
 // Настройте его в параметрах экспорта форм в Tilda
 if (empty($data['secret']) || $data['secret'] !== $tildaSecret) {
+  logDebug($logFile, 'SECRET KEY MISMATCH', ['expected' => $tildaSecret, 'received' => $data['secret'] ?? null]);
   http_response_code(403);
   die('Access denied: Invalid secret key.');
 }
@@ -57,7 +72,7 @@ if (empty($data['secret']) || $data['secret'] !== $tildaSecret) {
 $formTitle = trim((string)($data['title'] ?? 'Заявка с сайта "Энгельс"')); // Название формы
 $orderType = trim((string)($data['order_type'] ?? 'Тип заявки не указан')); // Тип формы
 $phone = preg_replace('/\D/', '', $data['phone'] ?? ''); // Очистка номера от мусора
-$email = filter_var($data['email'] ?? '', FILTER_VALIDATE_EMAIL);
+$email = filter_var($data['email'] ?? '', FILTER_VALIDATE_EMAIL) ?: null;
 $comment = trim((string)($data['message'] ?? ($data['comments'] ?? '')));
 $city = trim((string)($data['address_city'] ?? ''));
 $name = trim((string)($data['name'] ?? ''));
@@ -93,6 +108,8 @@ $fields = [
 $fields['fields'] = array_filter($fields['fields'], function ($value) {
   return $value !== null && $value !== '';
 });
+
+logDebug($logFile, 'PREPARED FIELDS FOR BITRIX24', $fields);
 
 // --- ОТПРАВКА ЗАПРОСА В BITRIX24 ---
 $url = "https://{$b24Domain}/rest/{$b24webhookOwnerID}/{$b24webhookToken}/{$b24method}.json";
