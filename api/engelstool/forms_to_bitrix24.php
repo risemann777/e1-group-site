@@ -42,6 +42,13 @@ function logDebug($logFile, $label, $data) {
 // --- ПОЛУЧЕНИЕ И ПРОВЕРКА ДАННЫХ ОТ TILDA ---
 $tildaDataRaw = file_get_contents('php://input');
 
+// Тильда при подключении вебхука шлёт test=test — отвечаем 200 и выходим
+if ($tildaDataRaw === 'test=test') {
+  logDebug($logFile, 'TILDA WEBHOOK TEST', ['body' => $tildaDataRaw]);
+  http_response_code(200);
+  die('ok');
+}
+
 logDebug($logFile, 'RAW DATA FROM TILDA', [
   'body' => $tildaDataRaw,
   'parsed' => json_decode($tildaDataRaw, true),
