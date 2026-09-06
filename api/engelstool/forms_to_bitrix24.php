@@ -82,7 +82,8 @@ if (empty($data['secret']) || $data['secret'] !== $tildaSecret) {
 // Названия ключей массива зависят от того, как вы назвали переменные полей в настройках блока форм Tilda
 $formTitle = trim((string)($data['title'] ?? 'Заявка с сайта "Энгельс"')); // Название формы
 $orderType = trim((string)($data['order_type'] ?? 'Тип заявки не указан')); // Тип формы
-$phone = preg_replace('/\D/', '', $data['phone'] ?? ''); // Очистка номера от мусора
+$phone = trim(preg_replace('/[^\d+]/', '', $data['phone'] ?? '')); // Очистка номера, сохраняем +
+$phone = $phone !== '' ? $phone : '';
 $email = filter_var($data['email'] ?? '', FILTER_VALIDATE_EMAIL) ?: null;
 $comment = trim((string)($data['message'] ?? ($data['comments'] ?? '')));
 $city = trim((string)($data['address_city'] ?? ''));
