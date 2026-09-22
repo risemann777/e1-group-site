@@ -18,18 +18,18 @@ $stageId = 'DT1038_20:NEW';               // Первая стадия заяв�
 // --- Коды полей смарт-процесса (замените на свои) ---
 $fieldTitleCode = 'title'; // Стандартное поле "Название" элемента СП
 // Пользовательские поля (примеры)
-$fieldCityCode = 'UF_CRM_8_1782916853452'; // Город
-$fieldNameCode = 'UF_CRM_8_1782916860269'; // Имя
-$fieldPhoneCode = 'UF_CRM_8_1782916870893'; // Телефон
-$fieldEmailCode = 'UF_CRM_8_1782916876572'; // Email
-$fieldCompanyCode = 'UF_CRM_8_1782916882532'; // Компания (текстом)
-$fieldOrderTypeCode = 'UF_CRM_8_1782916890508'; // Тип заявки
-$fieldCommentCode = 'UF_CRM_8_1782916900685'; // Полные данные заявки (комментарий)
-$fieldOrderSourceCode = 'UF_CRM_8_1782916906428'; // Источник заявки
-$fieldOrderUrlCode = 'UF_CRM_8_1782916911908'; // URL страницы отправки
-$fieldOrderIdCode = 'UF_CRM_8_1782916920725'; // Уникальный ID заявки (trainid)
-$fieldExcursionDateCode = 'UF_CRM_8_1782916933756'; // Дата экскурсии
-$fieldWantedToolType = 'UF_CRM_8_1782468718349'; // Интересующий инструмент
+$fieldCityCode = 'ufCrm8_1782916853452'; // Город
+$fieldNameCode = 'ufCrm8_1782916860269'; // Имя
+$fieldPhoneCode = 'ufCrm8_1782916870893'; // Телефон
+$fieldEmailCode = 'ufCrm8_1782916876572'; // Email
+$fieldCompanyCode = 'ufCrm8_1782916882532'; // Компания (текстом)
+$fieldOrderTypeCode = 'ufCrm8_1782916890508'; // Тип заявки
+$fieldCommentCode = 'ufCrm8_1782916900685'; // Полные данные заявки (комментарий)
+$fieldOrderSourceCode = 'ufCrm8_1782916906428'; // Источник заявки
+$fieldOrderUrlCode = 'ufCrm8_1782916911908'; // URL страницы отправки
+$fieldOrderIdCode = 'ufCrm8_1782916920725'; // Уникальный ID заявки (trainid)
+$fieldExcursionDateCode = 'ufCrm8_1782916933756'; // Дата экскурсии
+$fieldWantedToolType = 'ufCrm8_1782468718349'; // Интересующий инструмент
 
 // --- ЛОГИРОВАНИЕ ---
 $logFile = __DIR__ . '/debug.log';
