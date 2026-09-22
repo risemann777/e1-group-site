@@ -5,30 +5,31 @@
  */
 
 // --- НАСТРОЙКИ ---
-$b24Domain = 'e1-group.bitrix24.ru';  // Домен вашего портала без https://
+$b24Domain = 'e1-group.bitrix24.ru';      // Домен нашего портала без https://
 $b24webhookOwnerID = 1;                   // ID пользователя, создавшего вебхук
-$b24webhookToken = 'YOUR_WEBHOOK_TOKEN_HERE';    // Токен из входящего вебхука (B24_WEBHOOK_URL)
+$b24webhookToken = 'l6rp8yl0nr2h6kx9';    // Токен из входящего вебхука (B24_WEBHOOK_URL)
 $b24method = 'crm.item.add';              // вызываемый метод REST API
 $tildaSecret = '4f7c8d766e64fac4a00e';    // Секретный ключ Tilda (TILDA_SECRET_KEY)
 $entityTypeId = 1038;                     // Смарт-процесс (Сайт "Энгельс")
 $assignedById = 1;                        // ID пользователя-ответственного в Б24
 $categoryId = 20;                         // Формы (заявки)
-$stageId = 'DT1038_20:NEW';             // Первая стадия заявки
+$stageId = 'DT1038_20:NEW';               // Первая стадия заявки
 
-// Коды полей смарт-процесса (замените на свои)
-// Стандартное поле "Название" элемента СП
-$fieldTitleCode = 'title';
+// --- Коды полей смарт-процесса (замените на свои) ---
+$fieldTitleCode = 'title'; // Стандартное поле "Название" элемента СП
 // Пользовательские поля (примеры)
-$fieldCityCode = 'ufCrm8_1782916853452'; // Город
-$fieldNameCode = 'ufCrm8_1782916860269'; // Имя
-$fieldPhoneCode = 'ufCrm8_1782916870893'; // Телефон
-$fieldEmailCode = 'ufCrm8_1782916876572'; // Email
-$fieldCompanyCode = 'ufCrm8_1782916882532'; // Компания
-$fieldOrderTypeCode = 'ufCrm8_1782916890508'; // Тип заявки
-$fieldCommentCode = 'ufCrm8_1782916900685'; // Комментарий
-$fieldOrderSourceCode = 'ufCrm8_1782916906428'; // Источник заявки
-$fieldOrderUrlCode = 'ufCrm8_1782916911908'; // URL страницы отправки
-$fieldOrderIdCode = 'ufCrm8_1782916920725'; // Уникальный ID заявки
+$fieldCityCode = 'UF_CRM_8_1782916853452'; // Город
+$fieldNameCode = 'UF_CRM_8_1782916860269'; // Имя
+$fieldPhoneCode = 'UF_CRM_8_1782916870893'; // Телефон
+$fieldEmailCode = 'UF_CRM_8_1782916876572'; // Email
+$fieldCompanyCode = 'UF_CRM_8_1782916882532'; // Компания (текстом)
+$fieldOrderTypeCode = 'UF_CRM_8_1782916890508'; // Тип заявки
+$fieldCommentCode = 'UF_CRM_8_1782916900685'; // Полные данные заявки (комментарий)
+$fieldOrderSourceCode = 'UF_CRM_8_1782916906428'; // Источник заявки
+$fieldOrderUrlCode = 'UF_CRM_8_1782916911908'; // URL страницы отправки
+$fieldOrderIdCode = 'UF_CRM_8_1782916920725'; // Уникальный ID заявки (trainid)
+$fieldExcursionDateCode = 'UF_CRM_8_1782916933756'; // Дата экскурсии
+$fieldWantedToolType = 'UF_CRM_8_1782468718349'; // Интересующий инструмент
 
 // --- ЛОГИРОВАНИЕ ---
 $logFile = __DIR__ . '/debug.log';
@@ -83,12 +84,14 @@ if (empty($data['secret']) || $data['secret'] !== $tildaSecret) {
 $formTitle = trim((string)($data['title'] ?? 'Заявка с сайта "Энгельс"')); // Название формы
 $orderType = trim((string)($data['order_type'] ?? 'Тип заявки не указан')); // Тип формы
 $phone = trim(preg_replace('/[^\d+]/', '', $data['phone'] ?? '')); // Очистка номера, сохраняем +
-$phone = $phone !== '' ? $phone : '';
+$phone = $phone !== '' ? $phone : 'Телефон не указан';
 $email = filter_var($data['email'] ?? '', FILTER_VALIDATE_EMAIL) ?: null;
 $comment = trim((string)($data['message'] ?? ($data['comments'] ?? '')));
 $city = trim((string)($data['address_city'] ?? ''));
 $name = trim((string)($data['name'] ?? ''));
 $company = trim((string)($data['organization'] ?? ''));
+$excursionDate = trim((string)($data['excursion_date'] ?? ''));
+$wantedToolType = trim((string)($data['tool_type'] ?? ''));
 
 // Получаем уникальный ID заявки из Тильды
 $lead_id = $data['tranid'] ?? null;
@@ -113,6 +116,8 @@ $fields = [
     $fieldOrderUrlCode => 'https://engelstool.ru/',
     $fieldOrderIdCode => $lead_id,
     $fieldOrderTypeCode => $orderType,
+    $fieldExcursionDateCode => $excursionDate,
+    $fieldWantedToolType => $wantedToolType,
   ]
 ];
 
