@@ -148,15 +148,21 @@ curl_close($ch);
 // --- ОБРАБОТКА ОТВЕТА ---
 $response = json_decode($responseBody, true);
 
+logDebug($logFile, 'BITRIX24 RESPONSE', [
+  'http_code' => $httpCode,
+  'curl_error' => $curlError,
+  'url' => $url,
+  'raw' => $responseBody,
+  'parsed' => $response,
+]);
+
 if ($curlError) {
-  error_log("cURL Error to Bitrix24: " . $curlError);
   // Важно отдать Tilda успешный статус, иначе она будет слать заявку повторно.
   // Ошибку логируем только у себя.
 } elseif ($httpCode === 200 && isset($response['result'])) {
   // Успех
 } else {
   // Если Битрикс вернул ошибку API (например, ошибка прав или неверный код поля)
-  error_log("Bitrix24 API Error. Code: {$httpCode}. Response: " . $responseBody);
 }
 
 // Tilda ожидает любой ответ со статусом 200.
