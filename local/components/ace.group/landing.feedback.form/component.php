@@ -282,38 +282,46 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST["submit"]) && (!isset($
       $urlQuery = parse_url($currentURL, PHP_URL_QUERY);
       parse_str($urlQuery, $urlParams);
 
-      // Lead for Bitrix24
-      $leadData = [
+      // Forms from e1-group.ru -> E1 smart process, Forms category.
+      $sourceDescription = 'Сайт ' . $arSite["NAME"] . ' / форма " ' . $arParams["FORM_NAME"] . '"';
+      $sourceDescription .= "\nСтраница: https://e1-group.ru/";
+      foreach (['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'] as $utmKey) {
+        if (isset($urlParams[$utmKey]) && is_scalar($urlParams[$utmKey]) && (string)$urlParams[$utmKey] !== '') {
+          $sourceDescription .= "\n" . $utmKey . ': ' . (string)$urlParams[$utmKey];
+        }
+      }
+
+      $itemData = [
+        'entityTypeId' => 1046,
+        'useOriginalUfNames' => 'Y',
         'fields' => [
-          'TITLE' => $arSite["NAME"] . ': заявка с формы ' . $arParams["FORM_NAME"],
-          'NAME' => trim(htmlspecialcharsbx($_POST["user_name"])),
-          'PHONE' => [
-            ['VALUE' => trim(htmlspecialcharsbx($_POST["user_phone"])), 'VALUE_TYPE' => 'WORK']
-          ],
-          'EMAIL' => [
-            ['VALUE' => trim(htmlspecialcharsbx($_POST["user_email"])), 'VALUE_TYPE' => 'WORK']
-          ],
-          'ADDRESS_CITY' => trim(htmlspecialcharsbx($_POST["user_address_city"])),
-          'COMMENTS' => trim(htmlspecialcharsbx($_POST["user_comment"])),
-          'SOURCE_ID' => 'WEB',
-          'SOURCE_DESCRIPTION' => 'Сайт ' . $arSite["NAME"] . ' / форма " ' . $arParams["FORM_NAME"] . '"',
+          'title' => $arSite["NAME"] . ': заявка с формы ' . $arParams["FORM_NAME"],
+          'categoryId' => 38,
+          'assignedById' => 1,
+          'opened' => 'Y',
+          'UF_CRM_12_1790896245926' => trim(htmlspecialcharsbx($_POST["user_name"])),
+          'UF_CRM_12_1790896268630' => trim(htmlspecialcharsbx($_POST["user_phone"])),
+          'UF_CRM_12_1790896286577' => trim(htmlspecialcharsbx($_POST["user_email"])),
+          'UF_CRM_12_1782293750576' => trim(htmlspecialcharsbx($_POST["user_address_city"])),
+          'UF_CRM_12_1782293645176' => trim(htmlspecialcharsbx($_POST["user_comment"])),
+          'sourceId' => '1',
+          'sourceDescription' => $sourceDescription,
         ],
-        'params' => [
-          'REGISTER_SONET_EVENT' => 'Y' // Создать событие в "живой ленте" (опционально)
-        ]
       ];
 
-      if ($urlParams['utm_source']) $leadData['fields']['UTM_SOURCE'] = $urlParams['utm_source'];
-      if ($urlParams['utm_medium']) $leadData['fields']['UTM_MEDIUM'] = $urlParams['utm_medium'];
-      if ($urlParams['utm_campaign']) $leadData['fields']['UTM_CAMPAIGN'] = $urlParams['utm_campaign'];
-      if ($urlParams['utm_content']) $leadData['fields']['UTM_CONTENT'] = $urlParams['utm_content'];
-      if ($urlParams['utm_term']) $leadData['fields']['UTM_TERM'] = $urlParams['utm_term'];
-
-      $leadAddResult = executeB24Rest("crm.lead.add", $leadData);
+      $itemAddResult = executeB24Rest("crm.item.add", $itemData);
+      $itemId = 0;
+      if (is_array($itemAddResult) && !array_key_exists('error', $itemAddResult) && isset($itemAddResult['result']['item']['id'])) {
+        $itemId = filter_var($itemAddResult['result']['item']['id'], FILTER_VALIDATE_INT, ['options' => ['min_range' => 1]]) ?: 0;
+      }
       $logFile = $_SERVER["DOCUMENT_ROOT"] . "/logs/b24_rest.log";
-      file_put_contents($logFile, PHP_EOL . date('Y-m_d H:i:s') . ' New lead ID='. $leadAddResult['result'] . PHP_EOL, FILE_APPEND);
-
-			LocalRedirect($APPLICATION->GetCurPageParam("success=".$arResult["PARAMS_HASH"], Array("success")));
+      if ($itemId > 0) {
+        file_put_contents($logFile, PHP_EOL . date('Y-m_d H:i:s') . ' New CRM item entityTypeId=1046 ID=' . $itemId . PHP_EOL, FILE_APPEND);
+        LocalRedirect($APPLICATION->GetCurPageParam("success=".$arResult["PARAMS_HASH"], Array("success")));
+      } else {
+        file_put_contents($logFile, PHP_EOL . date('Y-m_d H:i:s') . ' CRM item creation failed entityTypeId=1046' . PHP_EOL, FILE_APPEND);
+        $arResult["ERROR_MESSAGE"]["crm"] = 'Не удалось зарегистрировать заявку. Пожалуйста, повторите попытку позже.';
+      }
 		}
 
 		$arResult["AUTHOR_COMMENT"] = trim(htmlspecialcharsbx($_POST["user_comment"]));
@@ -353,5 +361,9 @@ if(empty($arResult["ERROR_MESSAGE"]))
 
 if($arParams["USE_CAPTCHA"] == "Y")
 	$arResult["capCode"] =  htmlspecialcharsbx($APPLICATION->CaptchaGetCode());
+
+if (!empty($arResult["ERROR_MESSAGE"]["crm"])) {
+  ShowError($arResult["ERROR_MESSAGE"]["crm"]);
+}
 
 $this->IncludeComponentTemplate();
